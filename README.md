@@ -2,6 +2,10 @@
 
 ## Creator: Conrad Ning
 
+### Link Practice
+[Link for Google](https://www.google.com)
+
+
 ## Projects
 
 1. Project 1
