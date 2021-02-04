@@ -1,5 +1,7 @@
 # Welcome to my DATA 310 - Applied Machine Learning Course Repository! 
 
+Applied Machine Learning with Professor Tyler Frazier
+
 ## Creator: Conrad Ning
 
 ### Link Practice
