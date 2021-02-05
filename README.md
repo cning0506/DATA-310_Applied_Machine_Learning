@@ -4,9 +4,8 @@ Applied Machine Learning with Professor Tyler Frazier
 
 ## Creator: Conrad Ning
 
-### Link Practice
-[Link for Google](https://www.google.com)
-
+### Informal Response
+[Informal Response_Feb.03](https://github.com/cning0506/DATA-310/blob/main/Informal%20Response%20Feb_3.md)
 
 ## Projects
 
