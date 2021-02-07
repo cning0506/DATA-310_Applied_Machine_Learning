@@ -5,7 +5,7 @@ Applied Machine Learning with Professor Tyler Frazier
 ## Creator: Conrad Ning
 
 ### Informal Response
-[Informal Response_Feb.03](DATA-310/Informal Response Feb_3_Version2.md)
+[Informal Response_Feb.03](https://github.com/cning0506/DATA-310/blob/main/Informal%20Response%20Feb_3_Version2.md)
 
 ## Projects
 
