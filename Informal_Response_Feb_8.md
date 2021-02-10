@@ -23,3 +23,4 @@ It is consissts of 10,000 images, the size of each image is 28 x 28 pixels as we
 The result of the prediction was 0.8790000081062317, which has an accuracy of approximately 88%.  
 
 ### Plot Exercise 
+![Histogram](test_image.png)
