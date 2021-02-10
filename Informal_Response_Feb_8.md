@@ -24,3 +24,4 @@ The result of the prediction was 0.8790000081062317, which has an accuracy of ap
 
 ### Plot Exercise 
 ![Test Image](test_image.png) ![Histogram](histogram.png)
+<img src="test_image.png" width="425"/> <img src="histogram.png" width="425"/> 
