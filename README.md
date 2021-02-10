@@ -6,7 +6,7 @@ Applied Machine Learning with Professor Tyler Frazier
 
 ### Informal Response
 - [Informal Response_Feb.03](https://cning0506.github.io/DATA-310_Applied_Machine_Learning/Informal_Response_Feb_3_Version2.html)
-- [Informal Response Feb.05](https://cning0506.github.io/DATA-310_Applied_Machine_Learning/Informal_Response_Feb_8_Version2.0.html)
+- [Informal Response Feb.05](https://cning0506.github.io/DATA-310_Applied_Machine_Learning/Informal_Response_Feb_5_Version2.0.html)
 ## Projects
 
 1. Project 1
