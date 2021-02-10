@@ -14,10 +14,10 @@ The optimizer is used to adjust the trained model and enhance the performance ba
 It is consists of 60,000 images, the size of each image is 28 x 28 pixels. 
 
 ### The length of the training label 
-There are 60,000 label, one for each image. 
+There are 60,000 labels, one for each image. 
 
 ### The shape of the test set 
-It is consissts of 10,000 images, the size of each image is 28 x 28 pixels as well. 
+It is consists of 10,000 images, the size of each image is 28 x 28 pixels as well. 
 
 ### Estimation
 The result of the prediction was 0.8790000081062317, which has an accuracy of approximately 88%.  
