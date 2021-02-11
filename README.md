@@ -12,5 +12,5 @@ Applied Machine Learning with Professor Tyler Frazier
 1. Project 1
 2. Project 2
 
-### Slice of Data Science Reflections
+### Slice of Data Science - Reflections
 - Caleb Robinson 
