@@ -10,7 +10,7 @@ Applied Machine Learning with Professor Tyler Frazier
 
 ## Projects
 
-- [Mini Project 1](https://cning0506.github.io/DATA-310_Applied_Machine_Learning/mini_project1.html)
+- [Mini Project 1 - Social Distance Detector](https://cning0506.github.io/DATA-310_Applied_Machine_Learning/mini_project1.html)
 
 ### Slice of Data Science - Reflections
 - [Caleb Robinson](https://cning0506.github.io/DATA-310_Applied_Machine_Learning/SODS_CalebRobinson.html)
