@@ -12,5 +12,6 @@ I don't think this detector model would be that effective. With the current effi
 ### - What limitations or improvements might you include in order to improve your proposed design?
 I think some improvements include the facilitation of detection from different angles. Like we mentioned during class, we can test it via bird view. Moreover, I think the design can be even more powerful when we can identify people of different age groups, based on variables such as height, hair color, and the speed they are walking...etc. Perhaps we can also add in another color code for objects/vehicles.  
 
-### - [Input Video](https://youtu.be/bBj7QqmFNPw) (First 30 seconds of the video)
-### - [Output Video Link](https://youtu.be/8-QGmq2gROc) (Total Time Taken: 16 mins)
+### - [Input Video](https://youtu.be/bBj7QqmFNPw) (First 30 minutes of the video)
+### - [Output Video Link](https://youtu.be/8-QGmq2gROc) (Total Time Taken: 6 mins)
+### - [Output Video Full](https://drive.google.com/file/d/1Jbi604lJRDVIMUcfHoWRvMONWxIO62P3/view?usp=sharing) (Total Time Taken: 585 mins)
