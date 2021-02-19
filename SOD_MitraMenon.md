@@ -1,2 +1,7 @@
 ## Slice of Data Science - Mitra Menon from University of California Davis 
+### Feb.18.2021
 [Mitra Menon's Github on Genomic Diversity](https://github.com/mitramenon/W-M_BioDataScience)
+
+This is the second speaker of Slice of Data Science. We have Mitra Menon, a PhD from UC Davis, who has showed her research interest in biological data sciences through the lens of plant genomics. She started her panel by showing us two graphs that demonstrate how the size of data has increased  throughout the past twenty years. It was a graph depicting the cost per human genome, which remains at a price and drop drastically since 2007. The second graph depicts contiguous U.S Average temperature over the years. 
+
+I learned the most when she began to talk about how big data problems can be sovled by machine learning algorithm and other solutions. Specifically, she talked about applying machine learning algorithms that could develop into precision breeding. I also learned about the factors that explains the structuring of genetic diversity, as she conducted a series of research based on different types of crops such as pine trees, maize, and corn. I really appreciate how Mitra shared her research methodology via Github and patiently explain the procedures of her methodology. Hence, I really enjoy today's speaker and I continue to learn more about applications of Data Science across different fields.  
