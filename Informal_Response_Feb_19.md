@@ -2,13 +2,11 @@
 
 ### The Original Picture 
 ![image_org](IR3_Original.png)
-```
-filter = [ [1, 0, 0], [0, -1, 0], [0, 0, 1]]
-```
-### New filters 
 
+### New filters 
+![image_filter1](IR3_Filter 1.png)
 ```
-filter = [ [1, 0, 0], [0, -1, 0], [0, 0, 1]]
+filter = [ [0,1,0], [1,-4, 1], [0,1,0]]
 ```
 
 ### What are you functionally accomplishing as you apply the filter to your original array?
