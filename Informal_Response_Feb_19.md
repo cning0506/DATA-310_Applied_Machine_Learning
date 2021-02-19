@@ -31,3 +31,5 @@ This the image after applying the third filter.
 ### What are you functionally accomplishing as you apply the filter to your original array?
 
 ### Why is the application of a convolving filter to an image useful for computer vision? 
+
+### Pooling
