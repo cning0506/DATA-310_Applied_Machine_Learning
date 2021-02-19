@@ -15,3 +15,4 @@ Applied Machine Learning with Professor Tyler Frazier
 
 ### Slice of Data Science - Reflections
 - [Caleb Robinson](https://cning0506.github.io/DATA-310_Applied_Machine_Learning/SODS_CalebRobinson.html)
+- [Mitra Menon](https://cning0506.github.io/DATA-310_Applied_Machine_Learning/SOD_MitraMenon.html)
