@@ -4,7 +4,7 @@
 ![image_org](IR3_Original.png)
 
 ### New filters 
-![image_filter1](IR3_Filter 1.png)
+![image_filter1](IR3_Filter1.png)
 ```
 filter = [ [0,1,0], [1,-4, 1], [0,1,0]]
 ```
