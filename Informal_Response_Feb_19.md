@@ -28,6 +28,8 @@ filter = [[4,2,1],[2,0,-1],[1,2,0]]
 This the image after applying the third filter. 
 ![image_filter1](IR3_Filter3.png)
 
+The filter creates a high exposure effect, which makes the entire image looks a lot brighter. 
+
 ### What are you functionally accomplishing as you apply the filter to your original array?
 
 ### Why is the application of a convolving filter to an image useful for computer vision? 
