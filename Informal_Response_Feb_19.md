@@ -8,6 +8,7 @@
 filter = [ [0,1,0], [1,-4, 1], [0,1,0]]
 ```
 This is the image after applying the first filter.
+
 <img src="./IR3_Filter1.png" width="300" height="300" />
 
 The filter seems to emphasize more on the horizontal lines compared with the original image. 
@@ -17,7 +18,9 @@ filter = [[-1, -2, -1], [0, 0, 0], [1, 2, 1]]
 ```
 
 This the image after applying the second filter. 
+
 <img src="./IR3_Filter2.png" width="300" height="300" />
+
 
 The filter seems to emphasize more on the vertical lines compared with the original image. 
 
@@ -26,6 +29,7 @@ filter = [[4,2,1],[2,0,-1],[1,2,0]]
 ```
 
 This the image after applying the third filter. 
+
 <img src="./IR3_Filter3.png" width="300" height="300" />
 
 
