@@ -52,5 +52,19 @@ Pooling has the effect of extracting the key features of the image. Hence, the e
 filter = [ [0,1,0], [1,-4, 1], [0,1,0]]
 ```
 
-**My Image after pooling**
+### Stretch Goal : **My Image after pooling**
 ![My Image Pooling](IR3_MyImage_Pooling.png)
+<img src="./IR3_MyImage_Pooling.png" width="300" height="250" />
+
+### Convolve the 3x3 filter over the 9x9 matrix and provide the resulting matrix.
+```
+      [[0, 0, 0, 0, 1, 0, 0, 0, 0],
+       [0, 0, 0, 1, 1, 1, 0, 0, 0],
+       [0, 0, 0, 1, 1, 1, 0, 0, 0],
+       [0, 0, 0, 1, 1, 1, 0, 0, 0],
+       [1, 3, 3, 3, 3, 3, 3, 3, 1],
+       [0, 0, 0, 1, 1, 1, 0, 0, 0],
+       [0, 0, 0, 1, 1, 1, 0, 0, 0],
+       [0, 0, 0, 1, 1, 1, 0, 0, 0],
+       [0, 0, 0, 0, 1, 0, 0, 0, 0]]
+```
