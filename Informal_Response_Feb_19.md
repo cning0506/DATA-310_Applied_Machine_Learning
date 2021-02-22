@@ -28,6 +28,7 @@ filter = [[4,2,1],[2,0,-1],[1,2,0]]
 This the image after applying the third filter. 
 <img src="./IR3_Filter3.png" width="300" height="300" />
 
+
 The filter creates a high exposure effect, which makes the entire image looks a lot brighter. 
 
 ### What are you functionally accomplishing as you apply the filter to your original array?
@@ -44,9 +45,11 @@ Pooling has the effect of extracting the key features of the image. Hence, the e
 ### My Own Image
 
 **A safari image in Black and White**
+
 <img src="./IR3_MyImage.png" width="300" height="300" />
 
 **My Image in Filter One** 
+
 <img src="./IR3_MyImage_Filter1.png" width="300" height="300" />
 
 ```
@@ -54,6 +57,7 @@ filter = [ [0,1,0], [1,-4, 1], [0,1,0]]
 ```
 
 ### Stretch Goal : **My Image after pooling**
+
 <img src="./IR3_MyImage_Pooling.png" width="300" height="300" />
 
 ### Convolve the 3x3 filter over the 9x9 matrix and provide the resulting matrix.
