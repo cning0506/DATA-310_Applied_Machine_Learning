@@ -37,8 +37,9 @@ By applying filters to the original array, we are either increasing or decreasin
 A convolving filter to an image can be useful for computer vision when it comes to the detection of object details or characteristics of an image. Similar to the two filters that I applied for the original image, the filters effectively extract the vertical and horizontal diagonal lines. Hence, when we are working on the fashion MNST data set, we could apply the filter concept to identify the type of clothing more accurately.
 
 ### Pooling
-Pooling has the effect of extracting the key features of the image. Hence, the effect on this staircase image is to highlight the stairs and the people who are walking upstairs, along with their backpacks. It is a combination of horizontal, vertical, and diagonal lines that are crucial to the composition of the image. The size of the image does decrease by filtering the greatest value chosen from the 2x2 pixels. This could optimize the memory usage when we are working with an image with a greater resolution/quality. 
 ![Pooling](Pooling.png)
 
-### My Own Image
+Pooling has the effect of extracting the key features of the image. Hence, the effect on this staircase image is to highlight the stairs and the people who are walking upstairs, along with their backpacks. It is a combination of horizontal, vertical, and diagonal lines that are crucial to the composition of the image. The size of the image does decrease by filtering the greatest value chosen from the 2x2 pixels, which would reduce the size by 1/4 for the example image. This could optimize the memory usage when we are working with an image with a greater resolution/quality. 
 
+### My Own Image
+![My Chosen Image](IR3_MyImage.png)
