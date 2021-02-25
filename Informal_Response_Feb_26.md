@@ -30,14 +30,26 @@
 
 ### First Matrix convolution Result
 ```
-[[0,0,0,0,1,-1,1,-1,1],
- [-1,-1,0,2,1,0,-1,0,-1],
- [1,-1,0,0,2,-2,0,-1,0],
- [-1,0,-1,0,-1,1,0,0,-1],
- [0,0,0,0,-2,0,-1,1,1],
- [1,-1,0,-1,1,1,-1,0,-1],
- [0,1,-1,1,-2,0,-1,-1,-1],
- [-1,1,1,-2,1,0,-1,0,-1],
- [0,1,-1,-1,2,1,0,0,1]]
+[[ 0, 0, 2,-2, 1,-2, 1],
+ [-2, 1,-1, 3, 1, 0,-2],
+ [ 1,-1,-2, 0, 1,-1, 1],
+ [-1,-1, 0, 1,-2, 1,-1],
+ [-1, 1,-2, 0,-3,-2,-1],
+ [ 2,-3, 1,-1, 0, 1,-2],
+ [-1, 0, 1, 2,-2, 0, 0]]
 ```
 ### Second Matrix convolution Result 
+```
+[[ 0, 0, 4, 1,-2,-2,-1],
+ [-2,-1,-1, 2,-1, 0,-2],
+ [ 0,-1,-2,-3, 0, 0, 2],
+ [-1,-1, 0, 0, 0,-2, 0],
+ [-1, 0,-2,-1, 0,-3,-2],
+ [ 3,-2, 0,-1,-1,-2,-2],
+ [-1,-1,-1, 4, 1,-1, 1]]
+```
+
+### What is the purpose of using a 3x3 filter to convolve across a 2D image matrix?
+This is a common image processing technique. With the 3x3 filter, it is often used to detect the edges of the image and sharpening the features of the image. With my given matrix, the first 3x3 matrix should be more effective in edge detection since it is looking for the pixels locating at the opposite corners. 
+
+### Why would we include more than one filter? How many filters did you assign as part of your architecture when training a model to learn images of numbers from the mnist dataset?
