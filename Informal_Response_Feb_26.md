@@ -58,7 +58,10 @@ We want to include more than one filter for the convolutional network so we can 
 
 ## Mean Squared Errors
 ### The 10 biggest over-predictions
-
-### The 10 biggest under-predictions and The 10 most accurate results (use absolute value)
+MSE = 338679.65946653986
+### The 10 biggest under-predictions 
+MSE = 4630377.550264684
+### The 10 most accurate results (use absolute value)
+MSE = 48.94480008462041
 ### In which percentile do the 10 most accurate predictions reside? Did your model trend towards over or under predicting home values?
 ### Which feature appears to be the most significant predictor in the above cases?
