@@ -1,1 +1,10 @@
-#
+# Slice of Data Science - A. Sina Booeshaghi from Patcher Lab of California Institute of Technology 
+
+### Feb.25.2021
+
+[Diagnostic Demo] (https://colab.research.google.com/github/pachterlab/BLCSBGLKP_2020/blob/master/notebooks/diagnostic.ipynb)
+This Thursday we have the third Slice of Data Science speaker, A.Sina Booeshaghi from Cal Tech. The topic of this week's slice is the methodology of developing data-driven diagnostics for COVID-19. Sina started off by displaying the COVID-19 Timeline and explain the major milestones since the January of 2020, including WHO's declaration of COVID as a pandemic in March 2020 and the development of Swabseq Test on April 7th, 2020. He then introduced the steps of Swabseq test. First, collect samples. Second, process samples, where the samples are barcoded, mixed with control sequences, and reverse transcribed to cDNA. Third, sequence samples. Fourth, align sequences. It is also the preprocessing of the analysis. Fifth, correct barcodes. Sixth, count molecules, where the results are collated to count the number of copies of each gene in each sample. Seventh, report results. 
+
+He understands that the initial design is a naive apporach for producing a test result. He also explains there are some statistical validations that have not been tested, due to the urgency of publication. Sina continued by talking about a principled approach - multivariate logistic regression. In the graph, each point is a person, the points lies in the red region is most likely to be positive. Whereas, the point lies in the blue region is less likely to test positive. Squares are tested negative, circles represent positive. For the rest of the time, he explained the steps of diagnostic demo via Google Colab. 
+
+I think this is the most enjoyable Slice of Data Science so far. I think the topic is closely related to myself. In addition, I genuinely appreciate an advice that Sina gave us, he said, as a Data Scientist, "you have to strive to make the method reproducible." 
