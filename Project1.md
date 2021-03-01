@@ -15,12 +15,12 @@
 
 ### *Figure 1: Descriptive statistics of the 400 houses in Phoenix, AZ*
 
-![Figure 1: Descriptive Statistics table](https://github.com/cning0506/DATA-310_Applied_Machine_Learning/blob/main/Summary%20stat%20table.PNG)
+![Figure 1: Descriptive Statistics table](https://cning0506.github.io/DATA-310_Applied_Machine_Learning/Summary%20stat%20table.html)
 
 
 ### *Figure 2: Price Comparison of the 400 Houses in Phoenix, AZ*
 
-![Figure 2: Price Comparison](https://github.com/cning0506/DATA-310_Applied_Machine_Learning/blob/main/Price%20comparison_notitle.png)
+![Figure 2: Price Comparison](https://cning0506.github.io/DATA-310_Applied_Machine_Learning/Price%20comparison_notitle.html)
 
 
 
