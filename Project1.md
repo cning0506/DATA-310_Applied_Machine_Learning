@@ -15,7 +15,7 @@
 
 ### *Figure 1: Descriptive statistics of the 400 houses in Phoenix, AZ*
 
-<img src="./DescriptiveStat.PNG" width="400" height="400" />
+<img src="./DescriptiveStat.PNG" />
 
 
 ### *Figure 2: Price Comparison of the 400 Houses in Phoenix, AZ*
