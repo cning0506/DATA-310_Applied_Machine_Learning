@@ -12,3 +12,4 @@
 
   
 ## Appendix 
+![Figure 1: Descriptive Statistics table](https://github.com/cning0506/DATA-310_Applied_Machine_Learning/blob/main/Summary%20stat%20table.PNG)
