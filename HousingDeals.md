@@ -1,4 +1,6 @@
 # Figure 3: Best Deal to Worst Deals in Phoenix, AZ 
+
+
 |     |   prices | address                                              |   no_beds |   baths |   sqft |   predicted_price |   price_diff |
 |----:|---------:|:-----------------------------------------------------|----------:|--------:|-------:|------------------:|-------------:|
 | 141 |   24.99  | 205 W Bell Rd #85 Phoenix AZ 85023                   |         5 |       6 |  5.237 |           735.712 |   710.722    |
