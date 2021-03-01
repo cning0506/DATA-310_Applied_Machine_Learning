@@ -20,7 +20,7 @@
 
 ### *Figure 2: Price Comparison of the 400 Houses in Phoenix, AZ*
 
-<img src="./PriceComparison.png" width="400" height="400" />
+<img src="./PriceComparison.png" />
 
 
 
