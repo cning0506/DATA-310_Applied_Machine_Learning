@@ -63,5 +63,6 @@ MSE = 338679.65946653986
 MSE = 4630377.550264684
 ### The 10 most accurate results (use absolute value)
 MSE = 48.94480008462041
-### In which percentile do the 10 most accurate predictions reside? Did your model trend towards over or under predicting home values?
+
 ### Which feature appears to be the most significant predictor in the above cases?
+Taking at a look at the over-predictions, I realize how the mean of the bedrooms and bathrooms are consistent, but the square footage has a wide range. Hence, this feature appears to be the most significant predictor, based on the over-predictions observations. On the other hand, I think it is ambiguous for under-predictions model. The three predictors seem to be consistent. I would assume that the location is the more significant predictor. Hence, I could validate that if I take a look at zipcode. 
