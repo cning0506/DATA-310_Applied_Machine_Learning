@@ -20,17 +20,21 @@ To analyze the data, we load the dataset that we exported earlier and utilize th
 
 ```
 # Normalize the large values
-phoenix_houses.iloc[:,4] = phoenix_houses.iloc[:,4]/1000
-phoenix_houses.iloc[:,0] = phoenix_houses.iloc[:,0]/1000
+homes[['prices_scale']] = homes[['prices']]/100000 # prices
+homes[['sqft_scale']] = homes[['sqft']]/1000 # square feet
+
+# Model Training with TensorFlow
 
 model = tf.keras.Sequential([keras.layers.Dense(units=1, input_shape=[3])])
 model.compile(optimizer='sgd', loss='mean_squared_error')
-x1 = np.array(phoenix_houses.iloc[:,2], dtype=float)              #number of bedrooms
-x2 = np.array(phoenix_houses.iloc[:,4], dtype=float)              #sqft(/1000)
-x3 = np.array(phoenix_houses.iloc[:,3], dtype=float)              #number of bathrooms
+
+x1 = np.array(homes.iloc[:,2], dtype =float) # Number of bedrooms
+x2 = np.array(homes.iloc[:,3], dtype =float) # Number of Bathrooms
+x3 = np.array(homes.iloc[:,6], dtype =float) # Square feet scale
 xs = np.stack([x1, x2, x3], axis=1)
-ys = np.array(phoenix_houses.iloc[:,0], dtype=float)              #price(/1000)
-model.fit(xs, ys, epochs=500)
+ys = np.array(homes.iloc[:,5], dtype =float) # Price_scaled
+
+history = model.fit(xs, ys, epochs=500)
 ```
 
 To show the comparison between the original prices and the predicted prices, I normalized the two sets of prices, along with the square footage, by dividing by thousands. For the purpose of displaying better plot result, I further normalize the two prices with the common log base 10. The scatter plot is shown in Figure 3, where x-axis is the Predict Price and y-axis is the Original Asking price. For this particular graph, I used 2.7 as the reference point for both axes. The reason for choosing 2.7 as the reference point is because the density of the data points seems to be higher around that price. The plot is divided into three areas. Area A represents the bad deals since the original price is greater than the predicted price. Area B represents the good deals where the predicted price is lower than the original price. The rest of the areas that are not labeled are reasonable prices that vary based on different predictors and other variables such as location. 
@@ -49,7 +53,7 @@ Based on the exercise on Mean Squared Error Analysis, we found out that the mode
 
 ### *Figure 4: Best Fit Line and Linear regression of the 400 Houses in Phoenix, AZ*
 
-<img src="./Best_fit.png" />
+<img src="./Project1_Scatter.png" />
 
 
 ## Conclusion
