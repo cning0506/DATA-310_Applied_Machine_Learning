@@ -5,7 +5,7 @@ In this project, we will scrape 400 houses from a city of our choice via Zillow,
 
 
 ## Data Description 
-To start off, let’s talk about the housing data that are collected from Zillow. I chose Phoenix, Arizona as the city to collect information on houses. We first created the data frame with the variables as we add the content to the corresponding variables. We cleaned the data by removing the Html tags that wrap around the information that we want. With all the preprocessing, we generate a CSV file that contains the data for the response variable - price(in thousand) and three independent variables/ predictors.  Figure 1 displays the descriptive statistics of the 400 houses in Phoenix. We can see that the average price of housing in Phoenix is $465,706, the median is $356,000. This difference reflects the existence of luxurious and more expensive houses in the city, which raises the average price of the housing. We will take a closer look at these expensive houses and see if they worth the price. Interestingly, the data also shows that most of the houses from the sample tend to have 4 bedrooms. 
+To start off, let’s talk about the housing data that are collected from Zillow. I chose Phoenix, Arizona as the city to collect information on houses. We first created the data frame with the variables as we add the content to the corresponding variables. We cleaned the data by removing the Html tags that wrap around the information that we want. With all the preprocessing, we generate a CSV file that contains the data for the response variable - price(in thousand) and three independent variables/ predictors.  Figure 1 displays the descriptive statistics of the 400 houses in Phoenix. We can see that the average price of housing in Phoenix is $465,706, the median is $356,000. This difference reflects the existence of luxurious and more expensive houses in the city, which raises the average price of the housing. We will take a closer look at these expensive houses and see if they worth the price. Interestingly, the data also shows that most of the houses from the sample tend to have 4 bedrooms. We can get an overview of the price distribution in Figure 2. 
 
 ### *Figure 1: Descriptive statistics of the 400 houses in Phoenix, AZ*
 
@@ -19,6 +19,10 @@ To start off, let’s talk about the housing data that are collected from Zillow
 To analyze the data, we load the dataset that we exported earlier and utilize the TensorFlow module to train the model. With the Keras function, we are able to compile the three layers, which are the three predictors into the training model. After we train the model, we predict the housing prices and insert the predicted price as a new column in the data frame, as well as the price difference, which is calculated as predicted price subtract by the original price. To get the good deals and bad deals, I subset the data frame into two data frames, one with the price difference greater than 0, which are the good deals. There are 298 houses belongs to this subset. The other 102 houses have a price difference smaller than 0, which are generally bad deals or at least overprice.
 
 ```
+# Normalize the large values
+phoenix_houses.iloc[:,4] = phoenix_houses.iloc[:,4]/1000
+phoenix_houses.iloc[:,0] = phoenix_houses.iloc[:,0]/1000
+
 model = tf.keras.Sequential([keras.layers.Dense(units=1, input_shape=[3])])
 model.compile(optimizer='sgd', loss='mean_squared_error')
 x1 = np.array(phoenix_houses.iloc[:,2], dtype=float)              #number of bedrooms
@@ -29,18 +33,30 @@ ys = np.array(phoenix_houses.iloc[:,0], dtype=float)              #price(/1000)
 model.fit(xs, ys, epochs=500)
 ```
 
-To show the comparison between the original prices and the predicted prices, I normalized the two sets of prices with the common log base 10. The result is shown in Figure 2, where 2.7 is the reference point for both axes. The reason for choosing 2.7 as the reference point is because the density of the data points seems to be higher around that price. The plot is divided into three areas. Area A represents the bad deals since the original price is greater than the predicted price. Area B represents the good deals where the predicted price is lower than the original price. The rest of the areas that are not labeled are reasonable prices that vary based on different predictors and other variables such as location. The deals from best to worst are shown in Figure 3, which is created as a markdown file on Github. 
+To show the comparison between the original prices and the predicted prices, I normalized the two sets of prices, along with the square footage, by dividing by thousands. For the purpose of displaying better plot result, I further normalize the two prices with the common log base 10. The scatter plot is shown in Figure 3, where x-axis is the Predict Price and y-axis is the Original Asking price. For this particular graph, I used 2.7 as the reference point for both axes. The reason for choosing 2.7 as the reference point is because the density of the data points seems to be higher around that price. The plot is divided into three areas. Area A represents the bad deals since the original price is greater than the predicted price. Area B represents the good deals where the predicted price is lower than the original price. The rest of the areas that are not labeled are reasonable prices that vary based on different predictors and other variables such as location. 
 
 ### *Figure 3: Price Comparison of the 400 Houses in Phoenix, AZ*
 
 <img src="./PriceComparison.png" />
 
-## Training Results Analysis and Evaluation 
-Assuming that price difference is the only indicator to determine a good deal or not, we can generalize some characteristics of the predictors based on the top 100 good deals in Phoenix. The house typically has four bedrooms, three bathrooms, and approximately 2,950 square footage, which has a predicted price of around $600,000. If someone is looking for a house that has similar dimensions, anything less than $600,000 should be prioritized or at least worth a second thought. In conclusion, this model provides a broad prediction on housing prices for the datasets we collected. There are different approaches to improving the model. It can be more practical and accurate if we scrape more data and perhaps change up the sequence of the layer to determine the strength of each predictor. In fact, there might be some typos or errors from the website that needs to be addressed. In addition, we should also examine more predictors to avoid any systematic bias. 
+## Training Results Analysis 
+Assuming that price difference is the only indicator to determine a good deal or not, we can generalize some characteristics of the predictors based on the top 100 good deals in Phoenix. The house typically has four bedrooms, three bathrooms, and approximately 2,950 square footage, which has a predicted price of around $600,000. If someone is looking for a house that has similar dimensions, anything less than $600,000 should be prioritized or at least worth a second thought. The deals from best to worst are shown in Figure 5, which is created as a markdown file on Github. 
 
 
+## Mean Squared Error Analysis (MSE)  
+Based on the exercise on Mean Squared Error Analysis, we found out that the model seems to has a high level of error. Figure 4 shows the best fit line of the model, which actually overlaps with quite a lot of observations, considering the minimization of MSE. The model tends to be more pratical for the homes in the lower prices, and became much less accurate as home prices increased from there. There are a lot of outliers that heavily impacted the mean squared error for the over-predictions. However, majority of the houses are pretty close to the best fit line, which demonstrates reasonable fluctuations in real estate market.  
 
-### *Figure 4: Best Deal to Worst Deals in Phoenix, AZ* 
+
+### *Figure 4: Best Fit Line and Linear regression of the 400 Houses in Phoenix, AZ*
+
+<img src="./Best_fit.png" />
+
+
+## Conclusion
+In conclusion, this model provides a broad prediction on housing prices for the datasets we collected. There are different approaches to improving the model. It can be more practical and accurate if we scrape more data and perhaps change up the sequence of the layer to determine the strength of each predictor. In fact, there might be some typos or errors from the website that needs to be addressed. In addition, we should also examine more predictors to avoid any systematic bias. Regarding the visualization of the data, I think I could do a much better job showing the relationship between the two prices.  
+
+
+### *Figure 5: Best Deal to Worst Deals in Phoenix, AZ* 
 
 
 
