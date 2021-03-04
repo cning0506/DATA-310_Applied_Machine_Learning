@@ -48,12 +48,12 @@ Assuming that price difference is the only indicator to determine a good deal or
 
 
 ## Mean Squared Error Analysis (MSE)  
-Based on the Mean Squared Error function, we found out that the model seems to has a high level of error. Without any scaling, we have a Mean Squared Error of 188,674,907,852.39114. Figure 4 shows the best fit line of the model, which actually overlaps with quite a lot of observations. However, the high MSE also indicates the great price gap of certain houses. After scaling, we get a MSE of 179,508,812,379.9674, which is slightly better than the original model. In general, the model tends to be more pratical for the homes in the lower prices, and became much less accurate as home prices increased from there. There are a lot of outliers that heavily impacted the mean squared error for the over-predictions. A good majority of the houses are pretty close to the best fit line, which demonstrates reasonable fluctuations in real estate market.  
+Based on the Mean Squared Error function, we found out that the model seems to has a high level of error. Without any scaling, we have a Mean Squared Error of 188,674,907,852.39114. Figure 4 shows the best fit line of the model, which shows the lack of accurate asking price for quite a lot of observations. However, the high MSE also indicates the great price gap of certain houses. After scaling, we get a MSE of 179,508,812,379.9674, which is slightly better than the original model. In general, the model tends to be more pratical for the homes in the lower prices, and became much less accurate as home prices increased from there. There are a lot of outliers that heavily impacted the mean squared error for the over-predictions. A good majority of the houses are pretty close to the best fit line, which demonstrates reasonable fluctuations in real estate market.  
 
 
 ### *Figure 4: Best Fit Line and Linear regression of the 400 Houses in Phoenix, AZ*
 
-<img src="./Project1_Scatter.png" />
+<img src="./Best_fit_final.png" />
 
 
 ## Conclusion
