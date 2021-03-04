@@ -48,7 +48,7 @@ Assuming that price difference is the only indicator to determine a good deal or
 
 
 ## Mean Squared Error Analysis (MSE)  
-Based on the exercise on Mean Squared Error Analysis, we found out that the model seems to has a high level of error. Figure 4 shows the best fit line of the model, which actually overlaps with quite a lot of observations, considering the minimization of MSE. The model tends to be more pratical for the homes in the lower prices, and became much less accurate as home prices increased from there. There are a lot of outliers that heavily impacted the mean squared error for the over-predictions. However, majority of the houses are pretty close to the best fit line, which demonstrates reasonable fluctuations in real estate market.  
+Based on the Mean Squared Error function, we found out that the model seems to has a high level of error. Without any scaling, we have a Mean Squared Error of 188,674,907,852.39114. Figure 4 shows the best fit line of the model, which actually overlaps with quite a lot of observations. However, the high MSE also indicates the great price gap of certain houses. After scaling, we get a MSE of 179,508,812,379.9674, which is slightly better than the original model. In general, the model tends to be more pratical for the homes in the lower prices, and became much less accurate as home prices increased from there. There are a lot of outliers that heavily impacted the mean squared error for the over-predictions. A good majority of the houses are pretty close to the best fit line, which demonstrates reasonable fluctuations in real estate market.  
 
 
 ### *Figure 4: Best Fit Line and Linear regression of the 400 Houses in Phoenix, AZ*
@@ -57,7 +57,7 @@ Based on the exercise on Mean Squared Error Analysis, we found out that the mode
 
 
 ## Conclusion
-In conclusion, this model provides a broad prediction on housing prices for the datasets we collected. There are different approaches to improving the model. It can be more practical and accurate if we scrape more data and perhaps change up the sequence of the layer to determine the strength of each predictor. In fact, there might be some typos or errors from the website that needs to be addressed. In addition, we should also examine more predictors to avoid any systematic bias. Regarding the visualization of the data, I think I could do a much better job showing the relationship between the two prices.  
+In conclusion, this model provides a broad prediction on housing prices for the datasets we collected. There are different approaches to improving the model. It can be more practical and accurate if we scrape more data and perhaps change up the sequence of the layer to determine the strength of each predictor. In fact, there might be some typos or errors from the website that needs to be addressed. In addition, we should also examine more predictors to avoid any systematic bias. Regarding the visualization of the data, I think I could do a much better job showing the relationship between the two prices. I think a heat map could be a potential alternative to demonstrate the correlation between the predicted price and actual price. As a stretch goal, I will be looking at the zipcode and geographical locations as another major predictor. 
 
 
 ### *Figure 5: Best Deal to Worst Deals in Phoenix, AZ* 
