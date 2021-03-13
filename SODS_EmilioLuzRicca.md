@@ -1,5 +1,6 @@
 ## Slice of Data Science - Emilio Luz-Ricca (Sophomore at College of W&M)
 ### March.11.2021
+[Emilio's Markdown File](https://wmdsp.slack.com/files/U01JVGU7TGE/F01QJ5CA9HV/slice_of_ds.rmd)
 
 This week's Slice of Data Science, we have Emilio Luz-Ricca, who is a sophomore at W&M. I recalled taking the same Econometrics course last semester. 
 I think he is extremely capable and he is very good at what he is doing. The topic is making cleaner and more accessible visualizations in R. He explains his reasons for choosing R which are reproducibility and transparency.
