@@ -19,4 +19,4 @@ Applied Machine Learning with Professor Tyler Frazier
 - [Caleb Robinson](https://cning0506.github.io/DATA-310_Applied_Machine_Learning/SODS_CalebRobinson.html)
 - [Mitra Menon](https://cning0506.github.io/DATA-310_Applied_Machine_Learning/SOD_MitraMenon.html)
 - [Ali Sina Booeshaghi](https://cning0506.github.io/DATA-310_Applied_Machine_Learning/SOD_ASinaBooeshaghi.html)
-- [Emilio Luz-Ricca]()
+- [Emilio Luz-Ricca](https://cning0506.github.io/DATA-310_Applied_Machine_Learning/SODS_EmilioLuzRicca.html)
