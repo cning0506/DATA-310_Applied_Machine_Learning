@@ -1,6 +1,14 @@
 # DATA 310 Applied Machine Learning - Project 2 - DHS Data Analysis 
+#### Due Date: 3/24/2021
 
 ## Introduction
+
+## Data Description
+I chose 
+
+
+
+## R Script - Model 1 
 
 ```
     penalty .metric .estimator  mean     n std_err .config              
@@ -21,3 +29,10 @@
 14 0.00221  roc_auc hand_till  0.645     1      NA Preprocessor1_Model14
 15 0.00281  roc_auc hand_till  0.644     1      NA Preprocessor1_Model15
 ```
+
+## R Script - Model 2
+
+
+## Python - Logistic Regression model
+
+## Python - Gradient Boosting model
