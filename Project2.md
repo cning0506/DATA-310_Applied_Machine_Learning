@@ -2,11 +2,14 @@
 #### Due Date: 3/24/2021
 
 ## Introduction
+In this project, we will obtain Pakistan's household statistics requesting from Demographic and Health Surveys (DHS). With the help of two programming langugage, R and Python, we will be training the data, testing the data, and analyzing the data. More specifically, we want to take a look at the Area Under ROC curve and the penalty values by utilizing random forest models, logistic regression models, and gradient boosting models. After generating all four models, we will evaluate which model has the best approach to explain the wealth condition of Pakistan. Moreover, we want to discover which variable might have a more significant impact on the wealth outcomes of Pakistan. As an additional analysis, we will transform the original dataset and visualize them with heatmaps. 
 
 ## Data Description
-I chose 
-
-
+From the DHS website, I chose Pakistan as the country to analyze. The main reason is because of the accessiblity to the latest data. The country has a DHS VII and GPS data that covers the statistics in 2017-2018, which is relatively up to date compared to other countries. In this data, the locations are categorized in districts. 
+```
+location <- as_factor(households$shdist)
+```
+After a series of data cleaning, there are 100,819 samples that contains information including number/size, sex, age, and education of household members across 151 districts. To get a glimpse of the descriptive statistics of this dataset, the average household size in Pakistan is around 9. The female and male ratio is 51:49. The average age is 24.2 year-old, which reflects the higher ratio of young population in the nation. The average education that the people in Pakistan attained is primary school.   
 
 ## R Script - Model 1 
 
@@ -30,9 +33,17 @@ I chose
 15 0.00281  roc_auc hand_till  0.644     1      NA Preprocessor1_Model15
 ```
 
+### *Figure 1: Penalty Values versus the Area under the ROC Curve*
+
+<img src="./ROC_AUC.png" />
+
 ## R Script - Model 2
 
 
 ## Python - Logistic Regression model
 
 ## Python - Gradient Boosting model
+
+
+## A Look at Raw, Standardized, Normalized, and Percentized Data
+
