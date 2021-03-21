@@ -37,6 +37,13 @@ After a series of data cleaning, there are 100,819 samples that contains informa
 
 <img src="./ROC_AUC.png" />
 
+#### *Effectiveness of the penalized logistic regression model at predicting each of the five wealth outcomes*
+
+
+### *Figure 2: Linear Regression AUC Plotting Function*
+
+<img src="./lr_auc.png" />
+
 ## R Script - Model 2
 
 
