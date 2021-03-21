@@ -65,6 +65,14 @@ After a series of data cleaning, there are 100,819 samples that contains informa
 
 ## Python - Logistic Regression model
 
+| metric | score |
+|----------|-------------|
+|accuracy          |        0.858338 |
+|average_loss      |        0.354891|
+|loss               |       0.354891|
+|recall            |        0.000000|
+|global_step        |     100.000000|
+
 ## Python - Gradient Boosting model
 
 
