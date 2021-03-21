@@ -72,20 +72,20 @@ After a series of data cleaning, there are 100,819 samples that contains informa
 
 ### *Figure : *Raw Data*
 
-<img src="./raw.png" style="width: 10vw; min-width: 250px;"  />
+<img src="./raw.png" style="width: 50vw; min-width: 250px;"  />
 
 
 ### *Figure : *Scaled Data*
 
-<img src="./scale.png" style="width: 10vw; min-width: 250px;" />
+<img src="./scale.png" style="width: 50vw; min-width: 250px;" />
 
 
 ### *Figure : *Normalized Data*
 
-<img src="./normal.png" style="width: 10vw; min-width: 250px;" />
+<img src="./normal.png" style="width: 50vw; min-width: 250px;" />
 
 
 
 ### *Figure : *Percentized Data*
 
-<img src="./percent.png" style="width: 10vw; min-width: 250px;" />
+<img src="./percent.png" style="width: 50vw; min-width: 250px;" />
