@@ -16,21 +16,26 @@ After a series of data cleaning, there are 100,819 samples that contains informa
 ```
     penalty .metric .estimator  mean     n std_err .config              
       <dbl> <chr>   <chr>      <dbl> <int>   <dbl> <chr>                
- 1 0.0001   roc_auc hand_till  0.647     1      NA Preprocessor1_Model01
- 2 0.000127 roc_auc hand_till  0.647     1      NA Preprocessor1_Model02
- 3 0.000161 roc_auc hand_till  0.647     1      NA Preprocessor1_Model03
- 4 0.000204 roc_auc hand_till  0.647     1      NA Preprocessor1_Model04
- 5 0.000259 roc_auc hand_till  0.647     1      NA Preprocessor1_Model05
- 6 0.000329 roc_auc hand_till  0.647     1      NA Preprocessor1_Model06
- 7 0.000418 roc_auc hand_till  0.647     1      NA Preprocessor1_Model07
- 8 0.000530 roc_auc hand_till  0.647     1      NA Preprocessor1_Model08
- 9 0.000672 roc_auc hand_till  0.647     1      NA Preprocessor1_Model09
-10 0.000853 roc_auc hand_till  0.647     1      NA Preprocessor1_Model10
-11 0.00108  roc_auc hand_till  0.647     1      NA Preprocessor1_Model11
-12 0.00137  roc_auc hand_till  0.646     1      NA Preprocessor1_Model12
-13 0.00174  roc_auc hand_till  0.646     1      NA Preprocessor1_Model13
-14 0.00221  roc_auc hand_till  0.645     1      NA Preprocessor1_Model14
-15 0.00281  roc_auc hand_till  0.644     1      NA Preprocessor1_Model15
+ 1 0.0001   roc_auc hand_till  0.644     1      NA Preprocessor1_Model01
+ 2 0.000127 roc_auc hand_till  0.644     1      NA Preprocessor1_Model02
+ 3 0.000161 roc_auc hand_till  0.644     1      NA Preprocessor1_Model03
+ 4 0.000204 roc_auc hand_till  0.643     1      NA Preprocessor1_Model04
+ 5 0.000259 roc_auc hand_till  0.643     1      NA Preprocessor1_Model05
+ 6 0.000329 roc_auc hand_till  0.643     1      NA Preprocessor1_Model06
+ 7 0.000418 roc_auc hand_till  0.643     1      NA Preprocessor1_Model07
+ 8 0.000530 roc_auc hand_till  0.643     1      NA Preprocessor1_Model08
+ 9 0.000672 roc_auc hand_till  0.643     1      NA Preprocessor1_Model09
+10 0.000853 roc_auc hand_till  0.643     1      NA Preprocessor1_Model10
+11 0.00108  roc_auc hand_till  0.642     1      NA Preprocessor1_Model11
+12 0.00137  roc_auc hand_till  0.642     1      NA Preprocessor1_Model12
+13 0.00174  roc_auc hand_till  0.641     1      NA Preprocessor1_Model13
+14 0.00221  roc_auc hand_till  0.641     1      NA Preprocessor1_Model14
+15 0.00281  roc_auc hand_till  0.640     1      NA Preprocessor1_Model15
+16 0.00356  roc_auc hand_till  0.637     1      NA Preprocessor1_Model16
+17 0.00452  roc_auc hand_till  0.634     1      NA Preprocessor1_Model17
+18 0.00574  roc_auc hand_till  0.628     1      NA Preprocessor1_Model18
+19 0.00728  roc_auc hand_till  0.626     1      NA Preprocessor1_Model19
+20 0.00924  roc_auc hand_till  0.622     1      NA Preprocessor1_Model20
 ```
 
 ### *Figure 1: Penalty Values versus the Area under the ROC Curve*
@@ -52,5 +57,24 @@ After a series of data cleaning, there are 100,819 samples that contains informa
 ## Python - Gradient Boosting model
 
 
-## A Look at Raw, Standardized, Normalized, and Percentized Data
+## A Look at Raw, Scaled, Normalized, and Percentized Data
 
+### *Figure : *Raw Data*
+
+<img src="./raw.png" />
+
+
+### *Figure : *Scaled Data*
+
+<img src="./scale.png" />
+
+
+### *Figure : *Normalized Data*
+
+<img src="./normal.png" />
+
+
+
+### *Figure : *Percentized Data*
+
+<img src="./percent.png" />
