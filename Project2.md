@@ -61,7 +61,7 @@ After a series of data cleaning, there are 100,819 samples that contains informa
 
 ### *Figure : *Raw Data*
 
-<img src="./raw.png" />
+<img src="./raw.png" style="width: 55vw; min-width: 330px;"  />
 
 
 ### *Figure : *Scaled Data*
