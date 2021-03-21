@@ -51,6 +51,17 @@ After a series of data cleaning, there are 100,819 samples that contains informa
 
 ## R Script - Model 2
 
+### *Figure 3: ROC Plotting Function for Random Forest Model*
+
+<img src="./last_rf_fit_auc.png" />
+
+### *Figure 4: Minimal Node Size*
+
+<img src="./rf_res.png" />
+
+### *Figure 5: Comparison between the Logistic Regression and Random Forest Model*
+
+<img src="./rf_lr_auc.png" />
 
 ## Python - Logistic Regression model
 
