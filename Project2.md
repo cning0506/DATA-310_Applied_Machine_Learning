@@ -64,16 +64,43 @@ After a series of data cleaning, there are 100,819 samples that contains informa
 <img src="./rf_lr_auc.png" />
 
 ## Python - Logistic Regression model
+- Logistic Regression Evaluation Metrics:
 
 | metric | score |
 |----------|-------------|
-|accuracy          |        0.858338 |
-|average_loss      |        0.354891|
-|loss               |       0.354891|
-|recall            |        0.000000|
+|accuracy          |        0.808530 |
+|accuracy_baseline    |     0.795914 |
+|auc       |                0.754338 |
+|auc_precision_recall  |   0.448577|
+|average_loss      |        0.432013|
+|label/mean       |         0.204086|
+|loss               |      0.432013|
+|precision      |          0.564165|
+|prediction/mean      |   0.210902|
+|recall            |        0.271773|
 |global_step        |     100.000000|
 
+### *Figure 6: ROC for Logistic Regression*
+<img src="./ROC_Curve.png" />
+
+### *Figure 7:  Predicted probabilities Histogram for Logistic Regression*
+<img src="./pr_prob.png" />
+
 ## Python - Gradient Boosting model
+
+| metric | score |
+|----------|-------------|
+|accuracy          |         0.811268 |
+|accuracy_baseline    |     0.795914 |
+|auc       |                0.777180 |
+|auc_precision_recall  |    0.468442|
+|average_loss      |       0.412115|
+|label/mean       |         0.204086|
+|loss               |      0.412115|
+|precision      |           0.596317|
+|prediction/mean      |   0.203561|
+|recall            |        0.232893|
+|global_step        |     100.000000|
 
 
 ## A Look at Raw, Scaled, Normalized, and Percentized Data
