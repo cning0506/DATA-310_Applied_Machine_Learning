@@ -103,6 +103,12 @@ After a series of data cleaning, there are 100,819 samples that contains informa
 |global_step        |     100.000000|
 
 
+### *Figure 8: ROC for Gradient Boosting approach*
+<img src="./ROC_Curve_boost.png" />
+
+### *Figure 9:  Predicted probabilities Histogram for Gradient Boosting approach*
+<img src="./pr_prob_m4.png" />
+
 ## A Look at Raw, Scaled, Normalized, and Percentized Data
 
 ### *Figure : *Raw Data*
