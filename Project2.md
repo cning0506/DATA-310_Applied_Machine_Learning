@@ -12,7 +12,9 @@ location <- as_factor(households$shdist)
 After a series of data cleaning, there are 100,819 samples that contains information including number/size, sex, age, and education of household members across 151 districts. To get a glimpse of the descriptive statistics of this dataset, the average household size in Pakistan is around 9. The female and male ratio is 51:49. The average age is 24.2 year-old, which reflects the higher ratio of young population in the nation. The average education that the people in Pakistan attained is primary school. The average wealth level of Pakistanian household is 3, which equals to middle class income.    
 
 ## R Script - Model 1 
+With the R-Script provided in class, we want to split and sample the DHS households data and evaluate the AUC - ROC values. To start off, we aim to answer the first question, **which "top_model" performed the best (had the largest AUC)?**
 
+Below is the output of the Top-Models: 
 ```
     penalty .metric .estimator  mean     n std_err .config              
       <dbl> <chr>   <chr>      <dbl> <int>   <dbl> <chr>                
@@ -42,12 +44,23 @@ After a series of data cleaning, there are 100,819 samples that contains informa
 
 <img src="./ROC_AUC.png" />
 
+I selected Model 11 as the model that performed the best. As we can see from Figure 1, the penalty begins to drop significantly slightly after half of the models. Hence, I started the slicing from Model 10, then I testify the best model with the slicing method (shown below) from 5 to 15. As a result, Model 10,11, and 12 shares similar wealth outcomes, which demonstrates the largest AUC for all of the outcomes. 
+
+```
+lr_best <-
+  lr_res %>%
+  collect_metrics() %>%
+  arrange(penalty) %>%
+  slice(11) # I tried from 5-15
+lr_best
+```
+
 #### *Effectiveness of the penalized logistic regression model at predicting each of the five wealth outcomes*
 
 
 ### *Figure 2: Linear Regression AUC Plotting Function*
 
-<img src="./lr_auc.png" />
+<img src="./lr_auc11.png" />
 
 ## R Script - Model 2
 
