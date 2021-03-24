@@ -63,23 +63,23 @@ With the categorization of level 1 to 5 representing poor to wealthy classes amo
 
 <img src="./lr_auc18.png" />
 
-### *Figure 3: Linear Regression AUC Plotting Function*
+### *Figure 3: ROC_AUC Plot with Model 12 (The Top Performing Model)*
 
 <img src="./lr_auc11.png" />
 
 ## R Script - Model 2
 With the second R-Script provided in class, we utilize random forest model and evaluate the AUC - ROC values for the predictors. We will also be looking at the minimal node size based on the wealth outcomes as well.
+### *Figure 4: Minimal Node Size*
+
+<img src="./rf_res.png" />
 
 #### Comparison between Random Forest Model and Penalized Logistic Regression Model 
 
 
-### *Figure 4: ROC Plotting Function for Random Forest Model*
+### *Figure 5: ROC_AUC Plot for Random Forest Model*
 
 <img src="./last_rf_fit_auc.png" />
 
-### *Figure 5: Minimal Node Size*
-
-<img src="./rf_res.png" />
 
 ### *Figure 6: Comparison between the Logistic Regression and Random Forest Model*
 
