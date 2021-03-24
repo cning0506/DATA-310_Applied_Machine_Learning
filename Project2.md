@@ -1,4 +1,4 @@
-# DATA 310 Applied Machine Learning - Project 2 - DHS Data Analysis 
+# DATA 310 Applied Machine Learning - Project 2 - Pakistan DHS Data Analysis 
 #### Due Date: 3/24/2021
 
 ## Introduction
@@ -57,7 +57,7 @@ lr_best
 ```
 
 #### *Effectiveness of the penalized logistic regression model at predicting each of the five wealth outcomes*
-With the categorization of level 1 to 5 representing poor to wealthy classes among the population, Figure 2 and 3 displays the effectiveness of two models that predict the five wealth outcomes. As we can see from Figure 2, I used Model 18 as the top model for slicing, which has the penalty value of 0.00574. Out of the five wealth outcomes, the second and third model tends to have bad curves with random predictions. Compared to Figure 3, which is based on the performance of Model 12, all five wealth outcomes have great curves that represent more accurate prediction values. In Figure 3, I used the top performance model, Model 12, for the penalized logistic regression. This Model performs an excellent job in differentiating all five wealth outcomes, except for category 2.   
+With the categorization of level 1 to 5 representing poor to wealthy classes among the population, Figure 2 and 3 displays the effectiveness of two models that predict the five wealth outcomes. As we can see from Figure 2, I used Model 18 as the top model for slicing, which has the penalty value of 0.00574. Out of the five wealth outcomes, category 2 and 3, which are poorer and middle class, tend to have worse performance on the prediction value. Compared to Figure 3, which is based on the performance of Model 12, all five wealth outcomes have btter curves that represent more accurate prediction values. In Figure 3, I used the top performance model, Model 12, for the penalized logistic regression. This Model performs an excellent job in differentiating all five wealth outcomes, except for category 2. Category 1 and 5 both demonstrates great accuracy on prediction.    
 
 ### *Figure 2: ROC_AUC plot with Model 18*
 
@@ -68,18 +68,20 @@ With the categorization of level 1 to 5 representing poor to wealthy classes amo
 <img src="./lr_auc11.png" />
 
 ## R Script - Model 2
-With the second R-Script provided in class, we utilize random forest model and evaluate the AUC - ROC values for the predictors. We will also be looking at the minimal node size based on the wealth outcomes as well.
+With the second R-Script provided in class, we utilize random forest model and evaluate the AUC - ROC values for the predictors. We will also be looking at the minimal node size based on the wealth outcomes as well. Figure 4 shows the minimal node size with the random predictors. The node size is the parameter that controls the depth of the tree.
+
 ### *Figure 4: Minimal Node Size*
 
 <img src="./rf_res.png" />
 
-#### Comparison between Random Forest Model and Penalized Logistic Regression Model 
-
-
+**Below are the AUCs for the five wealth outcomes as well as a comparison to the penalized logistic regression.**
+ 
 ### *Figure 5: ROC_AUC Plot for Random Forest Model*
 
 <img src="./last_rf_fit_auc.png" />
 
+#### Comparison between Random Forest Model and Penalized Logistic Regression Model 
+Based on Figure 5, we can tell that the Random Forest Model shares similar performance with the Logistic Regression Model, especially for the poorer and middle class households (Level 2 and 3). In comparison, the Logistic Regression Model (Figure 3) might be relatively better than the Random Forest model(Figure 5). When we take a closer look at middle and richer wealth outcomes, the AUC values for Random Forest Model are relatively lower than Logistic Regression Model. Overall, I would say the deficit between the two model should not be qualified as a significant indicator of a better model.     
 
 ### *Figure 6: Comparison between the Logistic Regression and Random Forest Model*
 
