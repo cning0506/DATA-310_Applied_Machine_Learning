@@ -12,7 +12,7 @@ location <- as_factor(households$shdist)
 After a series of data cleaning, there are 100,819 samples that contains information including number/size, sex, age, and education of household members across 151 districts. To get a glimpse of the descriptive statistics of this dataset, the average household size in Pakistan is around 9. The female and male ratio is 51:49. The average age is 24.2 year-old, which reflects the higher ratio of young population in the nation. The average education that the people in Pakistan attained is primary school. The average wealth level of Pakistanian household is 3, which equals to middle class income.    
 
 ## R Script - Model 1 
-With the R-Script provided in class, we want to split and sample the DHS households data and evaluate the AUC - ROC values. To start off, we aim to answer the first question, **which "top_model" performed the best (had the largest AUC)?**
+With the first R-Script provided in class, we want to split and sample the DHS households data and evaluate the AUC - ROC values. To start off, we aim to answer the first question, **which "top_model" performed the best (had the largest AUC)?**
 
 Below is the output of the Top-Models: 
 ```
@@ -44,35 +44,44 @@ Below is the output of the Top-Models:
 
 <img src="./ROC_AUC.png" />
 
-I selected Model 11 as the model that performed the best. As we can see from Figure 1, the penalty begins to drop significantly slightly after half of the models. Hence, I started the slicing from Model 10, then I testify the best model with the slicing method (shown below) from 5 to 15. As a result, Model 10,11, and 12 shares similar wealth outcomes, which demonstrates the largest AUC for all of the outcomes. 
+I selected Model 12 as the model that performed the best, which has a penalty value of 0.00108. As we can see from Figure 1, the penalty begins to drop significantly slightly after half of the models. Hence, I started the slicing from Model 10, then I testify the best model with the slicing method (shown below) from 5 to 20. After the comparison of 15 models, Model 10,11, and 12 shares similar AUCROC, which demonstrates the largest AUC for all of the outcomes. Hence,  
 
+The Slicing Methdology we use in R
 ```
 lr_best <-
   lr_res %>%
   collect_metrics() %>%
   arrange(penalty) %>%
-  slice(11) # I tried from 5-15
+  slice(11) # Tested Model 5-15
 lr_best
 ```
 
 #### *Effectiveness of the penalized logistic regression model at predicting each of the five wealth outcomes*
+With the categorization of level 1 to 5 representing poor to wealthy classes among the population, Figure 2 and 3 displays the effectiveness of two models that predict the five wealth outcomes. As we can see from Figure 2, I used Model 18 as the top model for slicing, which has the penalty value of 0.00574. Out of the five wealth outcomes, the second and third model tends to have bad curves with random predictions. Compared to Figure 3, which is based on the performance of Model 12, all five wealth outcomes have great curves that represent more accurate prediction values. In Figure 3, I used the top performance model, Model 12, for the penalized logistic regression. This Model performs an excellent job in differentiating all five wealth outcomes, except for category 2.   
 
+### *Figure 2: ROC_AUC plot with Model 18*
 
-### *Figure 2: Linear Regression AUC Plotting Function*
+<img src="./lr_auc18.png" />
+
+### *Figure 3: Linear Regression AUC Plotting Function*
 
 <img src="./lr_auc11.png" />
 
 ## R Script - Model 2
+With the second R-Script provided in class, we utilize random forest model and evaluate the AUC - ROC values for the predictors. We will also be looking at the minimal node size based on the wealth outcomes as well.
 
-### *Figure 3: ROC Plotting Function for Random Forest Model*
+#### Comparison between Random Forest Model and Penalized Logistic Regression Model 
+
+
+### *Figure 4: ROC Plotting Function for Random Forest Model*
 
 <img src="./last_rf_fit_auc.png" />
 
-### *Figure 4: Minimal Node Size*
+### *Figure 5: Minimal Node Size*
 
 <img src="./rf_res.png" />
 
-### *Figure 5: Comparison between the Logistic Regression and Random Forest Model*
+### *Figure 6: Comparison between the Logistic Regression and Random Forest Model*
 
 <img src="./rf_lr_auc.png" />
 
@@ -93,10 +102,10 @@ lr_best
 |recall            |        0.271773|
 |global_step        |     100.000000|
 
-### *Figure 6: ROC for Logistic Regression*
+### *Figure 7: ROC for Logistic Regression*
 <img src="./ROC_Curve.png" />
 
-### *Figure 7:  Predicted probabilities Histogram for Logistic Regression*
+### *Figure 8:  Predicted probabilities Histogram for Logistic Regression*
 <img src="./pr_prob.png" />
 
 ## Python - Gradient Boosting model
@@ -116,10 +125,10 @@ lr_best
 |global_step        |     100.000000|
 
 
-### *Figure 8: ROC for Gradient Boosting approach*
+### *Figure 9: ROC for Gradient Boosting approach*
 <img src="./ROC_Curve_boost.png" />
 
-### *Figure 9:  Predicted probabilities Histogram for Gradient Boosting approach*
+### *Figure 10:  Predicted probabilities Histogram for Gradient Boosting approach*
 <img src="./pr_prob_m4.png" />
 
 ## A Look at Raw, Scaled, Normalized, and Percentized Data
