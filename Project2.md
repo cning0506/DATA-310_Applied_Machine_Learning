@@ -11,7 +11,7 @@ location <- as_factor(households$shdist)
 ```
 After a series of data cleaning, there are 100,819 samples that contains information including number/size, sex, age, and education of household members across 151 districts. To get a glimpse of the descriptive statistics of this dataset, the average household size in Pakistan is around 9. The female and male ratio is 51:49. The average age is 24.2 year-old, which reflects the higher ratio of young population in the nation. The average education that the people in Pakistan attained is primary school. The average wealth level of Pakistanian household is 3, which equals to middle class income.    
 
-## R Script - Model 1 
+## R Script - Logistic Regression Model (Model 1) 
 With the first R-Script provided in class, we want to split and sample the DHS households data and evaluate the AUC - ROC values. To start off, we aim to answer the first question, **which "top_model" performed the best (had the largest AUC)?**
 
 Below is the output of the Top-Models: 
@@ -67,7 +67,7 @@ With the categorization of level 1 to 5 representing poor to wealthy classes amo
 
 <img src="./lr_auc11.png" />
 
-## R Script - Model 2
+## R Script - Random Forest Model (Model 2)
 With the second R-Script provided in class, we utilize random forest model and evaluate the AUC - ROC values for the predictors. We will also be looking at the minimal node size based on the wealth outcomes as well. Figure 4 shows the minimal node size with the random predictors. The node size is the parameter that controls the depth of the tree.
 
 ### *Figure 4: Minimal Node Size*
@@ -92,11 +92,15 @@ In Figure 6, we have multiple curves with two color schemes, blue and red, each 
 
 We have an overview of the predictive power for variables considered in this dataset shown in Figure 7. 
 ### *Figure 7: Examination of Predictive Power for different variables*
-
 <img src="./last_rf_fit.png" />
 
+It is clear from Figure 7 that age is the most important predictor for the wealth outcomes for the households in Pakistan, while the size of the households follows the age with some degree of margin. This is beyond my expectation as education is actually the worst predictor out of all. Recalling the summary statistics of the data, the average value of age is 24.2, which might also explain how people with elder age, who usually have more experience and income, could become a crucial factor of the wealth of a household. 
 
-## Python - Logistic Regression model
+**This is a wrap for the analysis for R. We will apply similar methodology of train-test split data via Python.** 
+
+## Python - Logistic Regression model (Model 3)
+With the given Python script, we will train a logistic regression model using the tensorflow estimator API with our DHS data, again with wealth as the target. We will also be applying the linear classifier to the feature columns and determine the accuracy, AUC and other evaluative metrics towards the five wealth outcomes.
+
 - Logistic Regression Evaluation Metrics:
 
 | metric | score |
@@ -113,13 +117,16 @@ We have an overview of the predictive power for variables considered in this dat
 |recall            |        0.271773|
 |global_step        |     100.000000|
 
-### *Figure 7: ROC for Logistic Regression*
+
+### *Figure 8: ROC for Logistic Regression*
 <img src="./ROC_Curve.png" />
 
-### *Figure 8:  Predicted probabilities Histogram for Logistic Regression*
+### *Figure 9:  Predicted probabilities Histogram for Logistic Regression*
 <img src="./pr_prob.png" />
 
-## Python - Gradient Boosting model
+Figure 7 shows the relationship between True and False positive rate, it has an exponential relationship between the true and false rate. Figure 8 displays the predicted probabilities were mainly clustered at the mid, lower end of the prediction values. This suggests that the model may have over-predicted for the lower range of values, and under-predicted for mid-higher values. The evaluation metrics show that the model has an AUC of 0.75, which is acceptable and relatively better than the random models that we have from the R analysis. 
+
+## Python - Gradient Boosting Model (Model 4)
 
 | metric | score |
 |----------|-------------|
@@ -136,11 +143,17 @@ We have an overview of the predictive power for variables considered in this dat
 |global_step        |     100.000000|
 
 
-### *Figure 9: ROC for Gradient Boosting approach*
+### *Figure 10: ROC for Gradient Boosting approach*
 <img src="./ROC_Curve_boost.png" />
 
-### *Figure 10:  Predicted probabilities Histogram for Gradient Boosting approach*
+### *Figure 11:  Predicted probabilities Histogram for Gradient Boosting approach*
 <img src="./pr_prob_m4.png" />
+
+
+Similarly, this gradient boosting model is also performing better than Model 2 and the ROC curve shares the behavior of Model 3. although the slopes are slightly different, and the AUC of model 4 is slightly higher (.76 compared to .74). .76 is not a terrible AUC but it does seem like if the goal is to get as close to 1 as possible, then .76 is not that good.
+
+## Conclusion
+Comparing all four models, I think the model has the best performance 
 
 ## A Look at Raw, Scaled, Normalized, and Percentized Data
 
