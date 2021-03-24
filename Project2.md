@@ -74,18 +74,27 @@ With the second R-Script provided in class, we utilize random forest model and e
 
 <img src="./rf_res.png" />
 
-**Below are the AUCs for the five wealth outcomes as well as a comparison to the penalized logistic regression.**
+**The following two figures are the AUCs for the five wealth outcomes using RF Model and a comparison to the penalized Logistic Regression.**
  
 ### *Figure 5: ROC_AUC Plot for Random Forest Model*
 
 <img src="./last_rf_fit_auc.png" />
-
-#### Comparison between Random Forest Model and Penalized Logistic Regression Model 
-Based on Figure 5, we can tell that the Random Forest Model shares similar performance with the Logistic Regression Model, especially for the poorer and middle class households (Level 2 and 3). In comparison, the Logistic Regression Model (Figure 3) might be relatively better than the Random Forest model(Figure 5). When we take a closer look at middle and richer wealth outcomes, the AUC values for Random Forest Model are relatively lower than Logistic Regression Model. Overall, I would say the deficit between the two model should not be qualified as a significant indicator of a better model.     
+  
 
 ### *Figure 6: Comparison between the Logistic Regression and Random Forest Model*
 
 <img src="./rf_lr_auc.png" />
+
+#### Comparison between Random Forest Model and Penalized Logistic Regression Model 
+Based on Figure 5, we can tell that the Random Forest Model shares similar performance with the Logistic Regression Model, especially for the poorer and middle class households (Level 2 and 3). In comparison, the Logistic Regression Model (Figure 3) might be relatively better than the Random Forest model(Figure 5). When we take a closer look at middle and richer wealth outcomes, the AUC values for Random Forest Model are relatively lower than Logistic Regression Model. Overall, I would say the deficit between the two model should not be qualified as a significant indicator of a better model. 
+
+In Figure 6, we have multiple curves with two color schemes, blue and red, each represent Logistic Regression and Random Forest models. There are some overlaps between the two colors, as it demonstrates similar prediction outcomes like we conclude from Figure 5. There is one outlier that could potentially suggest the better prediction power of Logistic regression. We can see that the one of the random forest model seems to overlap the dotted line or the 45 degrees line. This means that it fails to generate random prediction values. Meanwhile, the majority of the curves for RF models lies above logistic regression model. In summary, Figure 6 suggests that RF Model has a sligthly better performance in predictions. 
+
+We have an overview of the predictive power for variables considered in this dataset shown in Figure 7. 
+### *Figure 7: Examination of Predictive Power for different variables*
+
+<img src="./last_rf_fit.png" />
+
 
 ## Python - Logistic Regression model
 - Logistic Regression Evaluation Metrics:
