@@ -127,6 +127,7 @@ With the given Python script, we will train a logistic regression model using th
 Figure 7 shows the relationship between True and False positive rate, it has an exponential relationship between the true and false rate. Figure 8 displays the predicted probabilities were mainly clustered at the mid, lower end of the prediction values. This suggests that the model may have over-predicted for the lower range of values, and under-predicted for mid-higher values. The evaluation metrics show that the model has an AUC of 0.75, which is acceptable and relatively better than the random models that we have from the R analysis. 
 
 ## Python - Gradient Boosting Model (Model 4)
+With the last Python script, we will be exploring gradient boosting model using decision trees. We will be taking the same approach of analysis as Model 3. 
 
 | metric | score |
 |----------|-------------|
@@ -150,10 +151,13 @@ Figure 7 shows the relationship between True and False positive rate, it has an 
 <img src="./pr_prob_m4.png" />
 
 
-Similarly, this gradient boosting model is also performing better than Model 2 and the ROC curve shares the behavior of Model 3. although the slopes are slightly different, and the AUC of model 4 is slightly higher (.76 compared to .74). .76 is not a terrible AUC but it does seem like if the goal is to get as close to 1 as possible, then .76 is not that good.
+Similarly, this gradient boosting model is also performing better than Model 2 and the ROC curve shares the behavior of Model 3 in a large picture. The main difference between the two models slightly different, and the AUC of model 4 is slightly higher (.76 compared to .74). .76 is not a terrible AUC but it does seem like if the goal is to get as close to 1 as possible, then .76 is not that good.
 
 ## Conclusion
 Comparing all four models, I think the model has the best performance 
+
+### *Figure 12:   
+<img src="./WealthOG.png" />
 
 ## A Look at Raw, Scaled, Normalized, and Percentized Data
 
