@@ -124,7 +124,7 @@ With the given Python script, we will train a logistic regression model using th
 ### *Figure 9:  Predicted probabilities Histogram for Logistic Regression*
 <img src="./pr_prob.png" />
 
-Figure 7 shows the relationship between True and False positive rate, it has an exponential relationship between the true and false rate. Figure 8 displays the predicted probabilities were mainly clustered at the mid, lower end of the prediction values. This suggests that the model may have over-predicted for the lower range of values, and under-predicted for mid-higher values. The evaluation metrics show that the model has an AUC of 0.75, which is acceptable and relatively better than the random models that we have from the R analysis. 
+Figure 7 shows the relationship between True and False positive rate, it has an exponential relationship between the true and false rate. Figure 8 displays the predicted probabilities were mainly clustered at the mid, lower end of the prediction values. This suggests that the model may have focus more on the lower range of values, and under-predicted for mid-higher values. The evaluation metrics show that the model has an AUC value of 0.754, which is acceptable and relatively better than the random models that we have from the R analysis. 
 
 ## Python - Gradient Boosting Model (Model 4)
 With the last Python script, we will be exploring gradient boosting model using decision trees. We will be taking the same approach of analysis as Model 3. 
@@ -151,32 +151,33 @@ With the last Python script, we will be exploring gradient boosting model using 
 <img src="./pr_prob_m4.png" />
 
 
-Similarly, this gradient boosting model is also performing better than Model 2 and the ROC curve shares the behavior of Model 3 in a large picture. The main difference between the two models slightly different, and the AUC of model 4 is slightly higher (.76 compared to .74). .76 is not a terrible AUC but it does seem like if the goal is to get as close to 1 as possible, then .76 is not that good.
+Similarly, this gradient boosting model is also performing better than Model 2 and the ROC curve shares the behavior of Model 3 in a large picture. The main difference between the two models is the last segment of the curve. The slope for Gradient Boosting model reaches zero once it reaches the max of the true positive values unlike Model 3 did not reach 0 until the end of the plot. In addition, the AUC value of model 4 is slightly higher (0.777 compared to 0.754). Though we want the value to be closer to 1, 0.777 is still a fairly good result. Regarding the prediction probabilities histogram, we can tell the mid values have an increasing prediction. However, the major issue is still the higher issues, where it is clearly under-predicted. 
 
 ## Conclusion
-Comparing all four models, I think the model has the best performance 
+While all four models have similar plot outputs, we can use AUC values as the standard for the best performing model. Based on the AUC values, the graident boost model has the best performance out of the four, with an AUC value of 0.777. One of the major flaws that the gradient boost model failed to address is the under-prediction of high-values prediction. There are barely predictions above the value of 0.65. Regarding the discrepancies among the five wealth outcomes from my DHS survey dataset, I think the four models do effectively reflect the dataset. As shown from Figure 12, the poorer wealth outcome (2) has the highest frequency, followed by the two outcomes on the opposite side of the spectrum. I think the first two models performed better at predicting the wealth outcomes on both ends, which is the richest and poorest households. Whereas, the third and fourth models seem to do a better job at predicting the middle wealth. However, we must also acknowledge the failure to identify the richest wealth outcome for the two models. From the four models, likewise many developing countries, we can conclude that there is a significant rich and poverty gap in this country. Moreover, with the demographic that consists of younger population as the majority, it is also affecting the wealth outcome of a household in great magnitude. The income inequality might require solutions that incorporate more than education for all. 
 
-### *Figure 12:   
+### *Figure 12:  Distribution of Wealth level in Pakistan
 <img src="./WealthOG.png" />
 
 ## A Look at Raw, Scaled, Normalized, and Percentized Data
 
-### *Figure : *Raw Data*
+Before we make any transformation on the data, let's take a look at the raw data with a heatmap. 
+
+### *Figure 13 : *Raw Data*
 
 <img src="./raw.png" style="width: 50vw; min-width: 250px;"  />
 
 
-### *Figure : *Scaled Data*
+### *Figure 14: *Scaled Data*
 
 <img src="./scale.png" style="width: 50vw; min-width: 250px;" />
 
 
-### *Figure : *Normalized Data*
+### *Figure 15: *Normalized Data*
 
 <img src="./normal.png" style="width: 50vw; min-width: 250px;" />
 
 
-
-### *Figure : *Percentized Data*
+### *Figure 16: *Percentized Data*
 
 <img src="./percent.png" style="width: 50vw; min-width: 250px;" />
