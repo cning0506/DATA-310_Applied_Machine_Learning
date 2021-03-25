@@ -153,31 +153,48 @@ With the last Python script, we will be exploring gradient boosting model using 
 
 Similarly, this gradient boosting model is also performing better than Model 2 and the ROC curve shares the behavior of Model 3 in a large picture. The main difference between the two models is the last segment of the curve. The slope for Gradient Boosting model reaches zero once it reaches the max of the true positive values unlike Model 3 did not reach 0 until the end of the plot. In addition, the AUC value of model 4 is slightly higher (0.777 compared to 0.754). Though we want the value to be closer to 1, 0.777 is still a fairly good result. Regarding the prediction probabilities histogram, we can tell the mid values have an increasing prediction. However, the major issue is still the higher issues, where it is clearly under-predicted. 
 
-## Conclusion
-While all four models have similar plot outputs, we can use AUC values as the standard for the best performing model. Based on the AUC values, the graident boost model has the best performance out of the four, with an AUC value of 0.777. One of the major flaws that the gradient boost model failed to address is the under-prediction of high-values prediction. There are barely predictions above the value of 0.65. Regarding the discrepancies among the five wealth outcomes from my DHS survey dataset, I think the four models do effectively reflect the dataset. As shown from Figure 12, the poorer wealth outcome (2) has the highest frequency, followed by the two outcomes on the opposite side of the spectrum. I think the first two models performed better at predicting the wealth outcomes on both ends, which is the richest and poorest households. Whereas, the third and fourth models seem to do a better job at predicting the middle wealth. However, we must also acknowledge the failure to identify the richest wealth outcome for the two models. From the four models, likewise many developing countries, we can conclude that there is a significant rich and poverty gap in this country. Moreover, with the demographic that consists of younger population as the majority, it is also affecting the wealth outcome of a household in great magnitude. The income inequality might require solutions that incorporate more than education for all. 
+We can compare the overall prediction probabilities for two models, which is shown in Figure 12. 
 
-### *Figure 12:  Distribution of Wealth level in Pakistan
+### *Figure 12: Comparison between the Logistic Regression and Graident Boosting Models with prediction probabilities 
+<img src="./boost_compare.png" />
+
+## Conclusion
+While all four models have similar plot outputs, we can use AUC values as the standard for the best performing model. Based on the AUC values, the graident boost model has the best performance out of the four, with an AUC value of 0.777. One of the major flaws that the gradient boost model failed to address is the under-prediction of high-values prediction. There are barely predictions above the value of 0.65. Regarding the discrepancies among the five wealth outcomes from my DHS survey dataset, I think the four models do effectively reflect the dataset. As shown from Figure 13, the poorer wealth outcome (2) has the highest frequency, followed by the two outcomes on the opposite side of the spectrum. I think the first two models performed better at predicting the wealth outcomes on both ends, which is the richest and poorest households. Whereas, the third and fourth models seem to do a better job at predicting the middle wealth. However, we must also acknowledge the failure to identify the richest wealth outcome for the two models. From the four models, likewise many developing countries, we can conclude that there is a significant rich and poverty gap in this country. Moreover, with the demographic that consists of younger population as the majority, it is also affecting the wealth outcome of a household in great magnitude. The income inequality might require solutions that incorporate more than education for all. 
+
+### *Figure 13:  Distribution of Wealth level in Pakistan
 <img src="./WealthOG.png" />
 
 ## A Look at Raw, Scaled, Normalized, and Percentized Data
 
-Before we make any transformation on the data, let's take a look at the raw data with a heatmap. 
+Before we make any transformation on the data, let's take a look at the raw data with a heatmap. As a reminder, these heatmaps do not contain every data, it is a subset of 1,000 samples from the dataset, but they should be representative of the data. In addition, the values are identified as integer for samples, using the codes below. 
+```
+pns$size <- as.integer(pns$size)
+pns$gender <- as.integer(pns$gender)
+pns$age <- as.integer(pns$age)
+pns$edu <- as.integer(pns$edu)
+pns$wealth <- as.integer(pns$wealth)
+```
 
-### *Figure 13 : *Raw Data*
+Figure 13 is a heatmap that presents the raw form of Pakistan DHS dataset. As shown from the figure, we can see that the scale of colors changes more dominantly for the age variable. This is due to the wide range of values for the age variable. Moreover, since the younger population is the majority of the demographics, we can tell that the yellow grids are representing the young-age population. The other variables have its categorical scale, which is going to reduce the variability of the data.   
+
+### *Figure 14 : *Raw Data*
 
 <img src="./raw.png" style="width: 50vw; min-width: 250px;"  />
 
+In Figure 15, we have the heatmap that displays our scaled data. This time, we have more variation in each variable while household size variable has a more apparent change of color scale. With the addition of 'scale' function, it subtracts the mean and divide by the standard deviation of the samples. Since household size might have a smaller standard deviation, considering the range of household size and the difference in size is not too large, the household size is going to be shown in more variation. 
 
-### *Figure 14: *Scaled Data*
+### *Figure 15: *Scaled Data*
 
 <img src="./scale.png" style="width: 50vw; min-width: 250px;" />
 
+Next, we have Figure 16, which is a heatmap with normalized data. I think this is the best approach for data transformation, because it is comprehensible and the behavior of each variable can be interpreted easier. First, the gender is divided approximately 50:50 ratio, which aligns with the actual data, which is 49:51 male-female ratio. The wealth is also divided up with the two extreme ends having more bold contrast. Corresponding to the earlier analysis, unlike the poorest and richest outcomes, the middle wealth outcome is hard to identify and differentiate when looking at the overall data. The rest of the varaibles do show some varaitions, but it is less readible unless we analyze the data in smaller segments. 
 
-### *Figure 15: *Normalized Data*
+### *Figure 16: *Normalized Data*
 
 <img src="./normal.png" style="width: 50vw; min-width: 250px;" />
 
+Last but not least, we have Figure 17 that presents the percentized data. This is the second best approach of data transformation since we receive a better variation for all the variables. However, it is relatively harder to interpret compared with the previous heatmap.  
 
-### *Figure 16: *Percentized Data*
+### *Figure 17: *Percentized Data*
 
 <img src="./percent.png" style="width: 50vw; min-width: 250px;" />
