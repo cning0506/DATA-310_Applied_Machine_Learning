@@ -1,3 +1,5 @@
+# Informal Response 5 - DHS Data Cleaning and Data Transformation - Mar.10.2021
+
 ## Import the households dataset for your selected country and create a data frame with chosen variables
 We will use the following code snippets to import the household dataset and create a dataframe with the varaibles. 
 ```
@@ -25,13 +27,15 @@ hhs <- cbind.data.frame(hhid, unit, weights, location, size, sex, age, edu, weal
 
 ## A Look at Raw, Scaled, Normalized, and Percentized DHS Data
 
-Before we make any transformation on the data, let's take a look at the raw data with a heatmap. As a reminder, these heatmaps do not contain every data, it is a subset of 1,000 samples from the dataset, but they should be representative of the data. In addition, the values are identified as integer for samples, using the codes below. 
+Before we make any transformation on the data, let's take a look at the raw data with a heatmap. As a reminder, these heatmaps do not contain every data, it is a subset of 1,000 samples from the dataset, but they should be representative of the data. In addition, the values are identified as integer for samples and convert into a dataframe, using the codes below.
 ```
 pns$size <- as.integer(pns$size)
 pns$gender <- as.integer(pns$gender)
 pns$age <- as.integer(pns$age)
 pns$edu <- as.integer(pns$edu)
 pns$wealth <- as.integer(pns$wealth)
+
+pns_prep <- data.frame(pns_prep)
 ```
 **I will integrate the analysis of these heatmaps in Project 2**
 
