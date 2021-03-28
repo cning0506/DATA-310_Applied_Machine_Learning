@@ -1,10 +1,6 @@
 # Informal Response 6 - Intro to Raster Stack - Mar.22.2021
 
-### Download the population raster from Worldpop for your selected county
-
-### Download the 12 rasters from your selected country and stack them. 
-
-### Produce a raster stack and calculate summary statistics using the script shared on Slack 
+### After downloading the population raster from Worldpop for Pakistan and downloading the 12 rasters for Pakistan, here is the raster stack with the summary statistics using the script shared on Slack 
 
 |"sum.water"|"sum.dst011"|"sum.dst040"|"sum.dst130"|"sum.dst140"|"sum.dst150"|"sum.dst160"|"sum.dst190"|"sum.dst200"|"sum.topo"|"sum.slope"|"sum.ntl"|"sum.pop19"|"mean.water"|"mean.dst011"|"mean.dst040"|"mean.dst130"|"mean.dst140"|"mean.dst150"|"mean.dst160"|"mean.dst190"|"mean.dst200"|"mean.topo"|"mean.slope"|"mean.ntl"|"mean.pop19"
 |--------------|---------------|---------------|---------------|---------------|---------------|---------------|---------------|---------------|----------|-------------|-------------|-----------|----------------|-------------------|------------------|----------------|----------------|----------------|----------------|------------------|----------------|----------------|----------------|------------------|----------------|
