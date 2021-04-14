@@ -10,6 +10,8 @@ For this project, since the file size is too large for Pakistan (which was the c
 Before we conduct the two regressions on the data, Figure 1 explains the relative importance of all variables in the dataset. 
 
 **Figure 1: The Relative Importance of 12 Variables**
+
+
 <img src="./Importance.png" />
 
 ## Method 1 - Linear Regression Model
