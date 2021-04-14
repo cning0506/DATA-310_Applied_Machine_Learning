@@ -2,13 +2,16 @@
 #### Due Date: 04/16/2021
 
 ## Introduction
+To predict the population distribution of a country, we need to consider both geographical features (such as slope, water regions) and human activities level (e.g. night time light). In Module 3, we want to integrate the geospaital data with the population data, where the data are stored and loaded in the form of rasters.  In this project, we will aggregate layers of rasters of a country. After generating a data frame, we will begin our analysis with the train-test split method, which gives us a list of predicted values. With two approaches, linear regression and random forest models, we can validate the two models with two model assessment metrics, R2 and MSE values. Last but not least, we will take a closer look at the spatial variation of the country and evaluate.
 
 ## Data Description
+For this project, since the file size is too large for Pakistan (which was the country that I chose to do for DHS project), I decided to change to **Albania**. We have thirteen raster files and one shape file that we want to aggregate. We have the unconstrained spaital distribution of population raster dataset in 100m resolution from Worldpop, we have the 12 geospatial rasters from Worldpop as well. We have the administrative boundaries shape file from UC Davis' GADM.
+
 
 ## Method 1 - Linear Regression 
 
-## Method 2 - 
+## Method 2 - Random Forest 
 
-## Model Evaluation/Comparison
+## Model Validation with R-squared and MSE 
 
 ## Spatial Variation Observation
