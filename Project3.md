@@ -1,4 +1,14 @@
-# Project 3 Geospatial & Population Prediction Project on Albania 
-#### Created by: Conrad Ning
-#### Created on: 04.11.2021
-#### Last updated: 04.13.2021
+# DATA 310 Applied Machine Learning - Project 3 - Geospatial & Population Prediction Project on Albania 
+#### Due Date: 04/16/2021
+
+## Introduction
+
+## Data Description
+
+## Method 1 - Linear Regression 
+
+## Method 2 - 
+
+## Model Evaluation/Comparison
+
+## Spatial Variation Observation
