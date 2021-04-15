@@ -15,7 +15,7 @@ Before we conduct the two regressions on the data, Figure 1 explains the relativ
 <img src="./Importance.png" />
 
 ## Method 1 - Linear Regression Model
-We will first look at the linear regression model. To begin, we apply the train-test split method with the proportion of 4/5. We then utilize these data as the input for the machine learning model. After the setting up the model, we convert the layers of rasters into a data frame and change the variable names with the addition columns of original value (x) and predicted value (y). 
+We will first look at the linear regression model. To begin, we apply the train-test split method with the proportion of 4/5. We then utilize these data as the input for the machine learning model. After the setting up the model, we convert the layers of rasters into a data frame and change the variable names with the addition columns of training values (x) and testing values (y).  
 
 ```
 rstr_to_df <- as.data.frame(lulc, xy = TRUE)
@@ -23,6 +23,9 @@ names(rstr_to_df) <- c("x", "y", "sum.water", "sum.dst011", "sum.dst040", "sum.d
                  "sum.dst150", "sum.dst160", "sum.dst190", "sum.dst200", "sum.topo", 
                  "sum.slope", "sum.ntl", "sum.pop20")
 ```
+Once we have all the data ready, we predict the values and plot the sum of the predicted values and import Albania's 2020 Population raster file. Figure 2 shows the difference between the actual population and the predicted population. 
+
+<img src="./Pop_diff_20.png" />
 
 ## Method 2 - Random Forest 
 
