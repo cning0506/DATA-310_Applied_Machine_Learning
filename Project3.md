@@ -7,7 +7,7 @@ To predict the population distribution of a country, we need to consider both ge
 ## Data Description
 For this project, since the file size is too large for Pakistan (which was the country that I chose to do for DHS project), I decided to change to **Albania**. We have thirteen raster files and one shape file that we want to aggregate. We have the unconstrained spaital distribution of population raster dataset in 100m resolution from Worldpop, we have the 12 geospatial rasters from Worldpop as well. We have the administrative boundaries shape file from UC Davis' GADM. As a relatively small country, Albania has two levels of administrative boundaries, which is divided into 37 districts. After aggregating the raster files, we have a collection of 7,744,128 data points. This is a relatively small size of dataset compared to Pakistan. Hence, the issue of insufficient sample size would be evaluate towards the end of the anlaysis.  
 
-Before we conduct the two regressions on the data, Figure 1 explains the relative importance of all variables in the dataset. 
+Before we conduct the two regressions on the data, Figure 1 explains the relative importance of all variables in the dataset. We have "ntl"
 
 **Figure 1: The Relative Importance of 12 Variables**
 
