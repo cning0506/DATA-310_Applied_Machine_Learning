@@ -23,12 +23,15 @@ names(rstr_to_df) <- c("x", "y", "sum.water", "sum.dst011", "sum.dst040", "sum.d
                  "sum.dst150", "sum.dst160", "sum.dst190", "sum.dst200", "sum.topo", 
                  "sum.slope", "sum.ntl", "sum.pop20")
 ```
-Once we have all the data ready, we predict the values and plot the sum of the predicted values and import Albania's 2020 Population raster file. Figure 2 shows the difference between the actual population and the predicted population. 
+Once we have all the data ready, we predict the values and plot the sum of the predicted values and import Albania's 2020 Population raster file. Figure 2 shows the difference between the actual population and the predicted population. The green-colored areas means there are no difference between the preidction and the actual population. Hence, for the majority of the map, there is no over-prediction nor under-prediction. However, towards the left side of the map, we can clearly see a small area of the map is colored in yellow/orange. As shown from the scale, we can tell that the area has a deficiency or under-prediction within the range of -60 to -80. We will discuss this further in the Model assessment, with the help of the 3D Raster Visualization. 
 
 <img src="./Pop_diff_20.png" />
 
 ## Method 2 - Random Forest 
-
+The second method we are applying is the random forest model. Similar to linear regression, we want to setup the model for random forest, which is based on the population variable from the dataset. 
+```
+model <- randomForest(sum.pop20 ~ ., data = data)
+```
 
 <img src="./pop_diff_rf.png" />
 
