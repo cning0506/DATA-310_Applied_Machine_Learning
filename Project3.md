@@ -29,27 +29,44 @@ Once we have all the data ready, we predict the values and plot the sum of the p
 
 <img src="./Pop_diff_20.png" />
 
+In Figure 3, we can see the predicted total population sum, which also reflects the regions that have greater population size. As we can tell from the plot, the more populated are concentrated on the west coast, where Albania's capital - Tirane and the Adriatic Sea are located. Whereas the east part of Albania is surrounded by mountain ridges, which has relatively smaller population. There are some regions that are colored in gray, which has the highest populations.    
+
+**Figure 3: Predicted Total Population Sum w/ Linear Regression
+
+<img src="./pts.png" />
+
+
 Before we calculate the model assessment metrics, we want to compare the size of the gridcells between the original dataset and the predicted values. As we can tell from the screenshot below, we have 2,799,761 as the population sum of 2020 compared to the predicted population of 2,798,757. It is evident that the population is under-predicted with the linear regression model. 
 
-
 <img src="./Cell_comparison.PNG" />
+
 
 ## Method 2 - Random Forest 
 The second method we are applying is the random forest model. Similar to linear regression, we want to setup the model for random forest, which is based on the population variable from the dataset. We predict the population with the random forest model. To compare the two methods, we also generate the difference in population sum and gridcells. We will also be looking at the 3D Raster visualization in the Model assessment section.  
 ```
 model <- randomForest(sum.pop20 ~ ., data = data)
 ```
-Figure 3 shows us the popuulation difference using the random forest model. Comparing Figure 3 to Figure 2, it is fair to say they look identical. However, there is still some slight contrast in the color. Figure 3 shows a splash of red in the center of the same area of Figure 2. The red color represents a range that fail between -80 to -100, which indicate the increasing amount of under-prediction for the random forest model. 
+Figure 4 shows us the popuulation difference using the random forest model. Comparing Figure 4 to Figure 2, it is fair to say they look identical. However, there is still some slight contrast in the color. Figure 4 shows a splash of red in the center of the same area of Figure 2. The red color represents a range that fail between -80 to -100, which indicate the increasing amount of under-prediction for the random forest model. 
 
-**Figure 3: Population Difference between WorldPop Data and Predicted values w/ Random Forest Model**
+**Figure 4: Population Difference between WorldPop Data and Predicted values w/ Random Forest Model**
 
 <img src="./pop_diff_rf.png" />
 
-We will then take a look at the difference between the size of the gridcells. We have 2,799,761 as the population sum of 2020 compared to the predicted population of 2,795,737. The predicted population is reduced compared to the linear regression model. This supports the argument from Figure 3, where the size of under-prediction grows with the random forest model. 
+Based on Figure 5, the random forest model performs better than the linear regression. The distribution of the population is depicted clearly in every region of the map. There are also more variation shown in the plot, which is doing a better job compared to Figure 3. The location of Tirane is easier to identify with the contrast of the population size and the estimation of the geographical location, which is the lightest pink surrounded by the green and orange regions on the center west coast. 
+
+**Figure 5: Predicted Total Population Sum w/ Random Forest
+
+<img src="./pts_rf.png" />
+
+Lastly, we can take a look at the difference between the size of the gridcells. We have 2,799,761 as the population sum of 2020 compared to the predicted population of 2,795,737. The predicted population is reduced compared to the linear regression model. This supports the argument from Figure 3, where the size of under-prediction grows with the random forest model. 
 
 Based on these two performances, we can assume that the random forest model is a worse model compared to linear regression model. We will verify this assumption with the two metrics, MSE and R-squared. 
 
 ## Model Validation with R-squared and MSE 
+After running the two methods, we will validate the two models with the metrics of R-squared and MSE. Both of these metrics are conveninent assessment metrics since we have calculated the sum of observed value and the sum of predicted values, which fulfills a part of the calculation for both R-squared and MSE. In fact, for the Random Forest model, we can get the R-squared value with the "print" function of the model.
+```
+
+```
 
 Random Forest: R-squared (% Var explained) : 11.27
 
