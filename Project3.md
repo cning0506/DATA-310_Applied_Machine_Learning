@@ -29,6 +29,9 @@ Once we have all the data ready, we predict the values and plot the sum of the p
 
 ## Method 2 - Random Forest 
 
+
+<img src="./pop_diff_rf.png" />
+
 ## Model Validation with R-squared and MSE 
 
 ## Model Assessment 
