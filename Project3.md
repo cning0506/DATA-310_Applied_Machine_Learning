@@ -23,15 +23,24 @@ names(rstr_to_df) <- c("x", "y", "sum.water", "sum.dst011", "sum.dst040", "sum.d
                  "sum.dst150", "sum.dst160", "sum.dst190", "sum.dst200", "sum.topo", 
                  "sum.slope", "sum.ntl", "sum.pop20")
 ```
-Once we have all the data ready, we predict the values and plot the sum of the predicted values and import Albania's 2020 Population raster file. Figure 2 shows the difference between the actual population and the predicted population. The green-colored areas means there are no difference between the preidction and the actual population. Hence, for the majority of the map, there is no over-prediction nor under-prediction. However, towards the left side of the map, we can clearly see a small area of the map is colored in yellow/orange. As shown from the scale, we can tell that the area has a deficiency or under-prediction within the range of -60 to -80. We will discuss this further in the Model assessment, with the help of the 3D Raster Visualization. 
+Once we have all the data ready, we predict the values and plot the sum of the predicted values and import Albania's 2020 Population raster file. Figure 2 shows the difference between the actual population and the predicted population. The green-colored areas means there are no difference between the preidction and the actual population. Hence, for the majority of the map, there is no over-prediction nor under-prediction. However, towards the left side of the map, we can clearly see a small area of the map is colored in yellow/orange. As shown from the scale, we can tell that the area has a deficiency or under-prediction within the range of -60 to -80. We will discuss further regarding the prediction accuracy and the geographical landscapes in the Model assessment section, with the help of the 3D Raster Visualization. 
+
+**Figure 2: Population Difference between WorldPop Data and Predicted values w/ linear regression model**
 
 <img src="./Pop_diff_20.png" />
 
+Before we calculate the model assessment metrics, we want to compare the size of the gridcells between the original dataset and the predicted values. As we can tell from the screenshot below, we have 2,799,761 as the population sum of 2020 compared to the predicted population of 2,798,757. It is evident that the population is under-predicted with the linear regression model. 
+
+
+<img src="./Cell_comparison.PNG" />
+
 ## Method 2 - Random Forest 
-The second method we are applying is the random forest model. Similar to linear regression, we want to setup the model for random forest, which is based on the population variable from the dataset. 
+The second method we are applying is the random forest model. Similar to linear regression, we want to setup the model for random forest, which is based on the population variable from the dataset. We predict the population with the random forest model. To compare the two methods, we also generate the difference in population sum and gridcells. We will also be looking at the 3D Raster visualization in the Model assessment section.  
 ```
 model <- randomForest(sum.pop20 ~ ., data = data)
 ```
+
+**Figure 3: Population Difference between WorldPop Data and Predicted values w/ Random Forest Model**
 
 <img src="./pop_diff_rf.png" />
 
