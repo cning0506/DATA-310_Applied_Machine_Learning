@@ -32,12 +32,12 @@ names(rstr_to_df) <- c("x", "y", "sum.water", "sum.dst011", "sum.dst040", "sum.d
 
 <img src="./3d_front.PNG" />
 
-<img scr="./3d_back.PNG"/>
+<img src="./3d_back.PNG"/>
 
 
-<img scr="./3d_front_rf.PNG"/>
+<img src="./3d_front_rf.PNG"/>
 
 
-<img scr="./3d_back_rf.PNG"/>
+<img src="./3d_back_rf.PNG"/>
 
 ## Spatial Variation Observation
