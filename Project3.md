@@ -30,4 +30,13 @@ names(rstr_to_df) <- c("x", "y", "sum.water", "sum.dst011", "sum.dst040", "sum.d
 
 ## Model Assessment 
 
+<img scr="./3d_front.png"/>
+
+<img scr="./3d_back.png"/>
+
+
+<img scr="./3d_front_rf.png"/>
+
+
+<img scr="./3d_back_rf.png"/>
 ## Spatial Variation Observation
