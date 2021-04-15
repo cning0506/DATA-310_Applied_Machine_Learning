@@ -39,14 +39,21 @@ The second method we are applying is the random forest model. Similar to linear 
 ```
 model <- randomForest(sum.pop20 ~ ., data = data)
 ```
+Figure 3 shows us the popuulation difference using the random forest model. Comparing Figure 3 to Figure 2, it is fair to say they look identical. However, there is still some slight contrast in the color. Figure 3 shows a splash of red in the center of the same area of Figure 2. The red color represents a range that fail between -80 to -100, which indicate the increasing amount of under-prediction for the random forest model. 
 
 **Figure 3: Population Difference between WorldPop Data and Predicted values w/ Random Forest Model**
 
 <img src="./pop_diff_rf.png" />
 
+We will then take a look at the difference between the size of the gridcells. We have 2,799,761 as the population sum of 2020 compared to the predicted population of 2,795,737. The predicted population is reduced compared to the linear regression model. This supports the argument from Figure 3, where the size of under-prediction grows with the random forest model. 
+
+Based on these two performances, we can assume that the random forest model is a worse model compared to linear regression model. We will verify this assumption with the two metrics, MSE and R-squared. 
+
 ## Model Validation with R-squared and MSE 
 
-## Model Assessment 
+Random Forest: R-squared (% Var explained) : 11.27
+
+## Model Assessment and Spatial Variation Observation
 
 <img src="./3d_front.PNG" />
 
@@ -58,4 +65,4 @@ model <- randomForest(sum.pop20 ~ ., data = data)
 
 <img src="./3d_back_rf.PNG"/>
 
-## Spatial Variation Observation
+
