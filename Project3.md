@@ -30,7 +30,7 @@ names(rstr_to_df) <- c("x", "y", "sum.water", "sum.dst011", "sum.dst040", "sum.d
 
 ## Model Assessment 
 
-<img scr="./3d_front.PNG"/>
+<img src="./3d_front.PNG" />
 
 <img scr="./3d_back.PNG"/>
 
