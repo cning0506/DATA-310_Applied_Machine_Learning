@@ -2,9 +2,9 @@
 
 Applied Machine Learning with Professor Tyler Frazier
 
-## Creator: Conrad Ning
+### Creator: Conrad Ning
 
-### Informal Response
+## Informal Response
 - [Informal Response_Feb.03](https://cning0506.github.io/DATA-310_Applied_Machine_Learning/Informal_Response_Feb_3_Version2.html)
 - [Informal Response_Feb.05](https://cning0506.github.io/DATA-310_Applied_Machine_Learning/Informal_Response_Feb_5_Version2.0.html)
 - [Informal Response_Feb.19](https://cning0506.github.io/DATA-310_Applied_Machine_Learning/Informal_Response_Feb_19.html)
@@ -20,7 +20,7 @@ Applied Machine Learning with Professor Tyler Frazier
 - [Project 2 - Pakistan DHS Data Analysis Project](https://cning0506.github.io/DATA-310_Applied_Machine_Learning/Project2.html)
 - Project 3
 
-### Slice of Data Science - Reflections
+## Slice of Data Science Writeups
 - [Caleb Robinson](https://cning0506.github.io/DATA-310_Applied_Machine_Learning/SODS_CalebRobinson.html)
 - [Mitra Menon](https://cning0506.github.io/DATA-310_Applied_Machine_Learning/SOD_MitraMenon.html)
 - [Ali Sina Booeshaghi](https://cning0506.github.io/DATA-310_Applied_Machine_Learning/SOD_ASinaBooeshaghi.html)
