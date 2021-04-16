@@ -15,7 +15,7 @@ Before we conduct the two regressions on the data, Figure 1 explains the relativ
 <img src="./Importance.png" />
 
 ## Method 1 - Linear Regression Model
-We will first look at the linear regression model. To begin, we apply the train-test split method with the proportion of 4/5. We then utilize these data as the input for the machine learning model. After the setting up the model, we convert the layers of rasters into a data frame and change the variable names with the addition columns of training values (x) and testing values (y).  
+We will first look at the linear regression model. To begin, we apply the train-test split method with the proportion of 4/5. We then utilize these data as the input for the machine learning model. After the setting up the model, we convert the layers of rasters into a data frame and change the variable names with the addition columns of coordinates x and y.  
 
 ```
 rstr_to_df <- as.data.frame(lulc, xy = TRUE)
@@ -54,30 +54,39 @@ Figure 4 shows us the popuulation difference using the random forest model. Comp
 
 Based on Figure 5, the random forest model performs better than the linear regression. The distribution of the population is depicted clearly in every region of the map. There are also more variation shown in the plot, which is doing a better job compared to Figure 3. The location of Tirane is easier to identify with the contrast of the population size and the estimation of the geographical location, which is the lightest pink surrounded by the green and orange regions on the center west coast. 
 
-**Figure 5: Predicted Total Population Sum w/ Random Forest
+**Figure 5: Predicted Total Population Sum w/ Random Forest**
 
 <img src="./pts_rf.png" />
 
-Lastly, we can take a look at the difference between the size of the gridcells. We have 2,799,761 as the population sum of 2020 compared to the predicted population of 2,795,737. The predicted population is reduced compared to the linear regression model. This supports the argument from Figure 3, where the size of under-prediction grows with the random forest model. 
+Lastly, we can take a look at the difference between the size of the gridcells. We have 2,799,761 as the population sum of 2020 compared to the predicted population of 2,519,400. The predicted population is reduced significantly compared to the linear regression model. This supports the argument from Figure 4, where the size of under-prediction grows with the random forest model. 
 
 Based on these two performances, we can assume that the random forest model is a worse model compared to linear regression model. We will verify this assumption with the two metrics, MSE and R-squared. 
 
 ## Model Validation with R-squared and MSE 
-After running the two methods, we will validate the two models with the metrics of R-squared and MSE. Both of these metrics are conveninent assessment metrics since we have calculated the sum of observed value and the sum of predicted values, which fulfills a part of the calculation for both R-squared and MSE. In fact, for the Random Forest model, we can get the R-squared value with the "print" function of the model.
+After running the two methods, we will validate the two models with the metrics of R-squared and MSE. Both of these metrics are conveninent assessment metrics since we have calculated the sum of observed value and the sum of predicted values, which fulfills a part of the calculation for both R-squared and MSE. In fact, for the Random Forest model, we can get the R-squared value with the "print" function of the model (the code snippet attached below). We get the R-squared value of 0.1127, which means that 11.27% of sample variance is explained by this model. 
 ```
+model <- randomForest(sum.pop20 ~ ., data = data)
 
+print(model)
 ```
+For linear regression, 
 
 Random Forest: R-squared (% Var explained) : 11.27
 
 ## Model Assessment and Spatial Variation Observation
+To assess the two models, we will be looking at the 3D Raster visaulization from the front and back of Albania. We will first look at the front view of the 3D plot for both model. From the first plot of Figure 6, we can tell that both screenshots seem identical. The main similarity is the apparent hole at the location of Tirane. There are smaller holes that represents the regions that have higher population. We can also observe the river basin across Albania from the lines on the map. In general, the front view does not contribute much for the model assessment, but it provides some insight on the landscape. 
+
+**Figure 6: 3D Raster Visaulization of Linear Regression (1) and Random Forest Models (2) (Front View) 
 
 <img src="./3d_front.PNG" />
 
-<img src="./3d_back.PNG"/>
-
-
 <img src="./3d_front_rf.PNG"/>
+
+Looking at the back view of the two plots, we can observe some deviation between the two models. There are a lot of spikes steming from the holes, which can be explained as the under-predictions. As discussed earlier, Tirane has the largest hole, which is reflected as the most dominant spike on the map. Although the screenshots from Figure 7 are taken from different angles, we can still see the height of the spikes for the 
+
+**Figure 7: 3D Raster Visaulization of Linear Regression (1) and Random Forest Models (2) (Back View) 
+
+<img src="./3d_back.PNG"/>
 
 
 <img src="./3d_back_rf.PNG"/>
