@@ -98,3 +98,4 @@ Looking at the back view of the two plots, we can observe some deviation between
 
 As the final analysis, we will try to scale the data to subregions and examine the spatial variation of urban and suburban areas. 
 
+## Conclusion 
