@@ -72,23 +72,29 @@ print(model)
 For linear regression, 
 
 Random Forest: R-squared (% Var explained) : 11.27
+Another metrics is mean squared error (MSE). We can use the following code snippets to find MSE. 
+```
+cellStats((diff_sums)^2, mean)
+```
+For the linear regression model, the value of MSE is 18.00924. For the random forest, The value of MSE is 18.10797. Based on this metric, we can tell that the linear regression model is better than the random forest model by a minor margin. It is reasonable to say that both models might not be the ideal methods for this analysis.  
 
 ## Model Assessment and Spatial Variation Observation
 To assess the two models, we will be looking at the 3D Raster visaulization from the front and back of Albania. We will first look at the front view of the 3D plot for both model. From the first plot of Figure 6, we can tell that both screenshots seem identical. The main similarity is the apparent hole at the location of Tirane. There are smaller holes that represents the regions that have higher population. We can also observe the river basin across Albania from the lines on the map. In general, the front view does not contribute much for the model assessment, but it provides some insight on the landscape. 
 
-**Figure 6: 3D Raster Visaulization of Linear Regression (1) and Random Forest Models (2) (Front View) 
+**Figure 6: 3D Raster Visaulization of Linear Regression (1) and Random Forest Models (2) (Front View)** 
 
 <img src="./3d_front.PNG" />
 
 <img src="./3d_front_rf.PNG"/>
 
-Looking at the back view of the two plots, we can observe some deviation between the two models. There are a lot of spikes steming from the holes, which can be explained as the under-predictions. As discussed earlier, Tirane has the largest hole, which is reflected as the most dominant spike on the map. Although the screenshots from Figure 7 are taken from different angles, we can still see the height of the spikes for the 
+Looking at the back view of the two plots, we can observe some deviation between the two models. There are a lot of spikes steming from the holes, which can be explained as the under-predictions. As discussed earlier, Tirane has the largest hole, which is reflected as the most dominant spike on the map. Although the screenshots from Figure 7 are taken from different angles, we can see the height of the spikes for the random forest is greater than the linear regression. This suggests the magnitude of the under-prediction is greater for the random forest model. Hence, we can conclude that the linear regression model is a more accurate model for the population prediction of Albania.   
 
-**Figure 7: 3D Raster Visaulization of Linear Regression (1) and Random Forest Models (2) (Back View) 
+**Figure 7: 3D Raster Visaulization of Linear Regression (1) and Random Forest Models (2) (Back View)** 
 
 <img src="./3d_back.PNG"/>
 
 
 <img src="./3d_back_rf.PNG"/>
 
+As the final analysis, we will try to scale the data to subregions and examine the spatial variation of urban and suburban areas. 
 
