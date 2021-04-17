@@ -62,6 +62,8 @@ Lastly, we can take a look at the difference between the size of the gridcells. 
 
 Based on these two performances, we can assume that the random forest model is a worse model compared to linear regression model. We will verify this assumption with the two metrics, MSE and R-squared. 
 
+## Other Methods - PNS Ranger and Random Forest 
+
 ## Model Validation with R-squared and MSE 
 After running the two methods, we will validate the two models with the metrics of R-squared and MSE. Both of these metrics are conveninent assessment metrics since we have calculated the sum of observed value and the sum of predicted values, which fulfills a part of the calculation for both R-squared and MSE. In fact, for the Random Forest model, we can get the R-squared value with the "print" function of the model (the code snippet attached below). We get the R-squared value of 0.1127, which means that 11.27% of sample variance is explained by this model. 
 ```
@@ -69,14 +71,13 @@ model <- randomForest(sum.pop20 ~ ., data = data)
 
 print(model)
 ```
-For linear regression, 
+For linear regression, we have to calculate the R-squared with a manual approach. Using the R-squared formula, we get the R-squared value of 0.3576. This means that 35.76% of sample variance is explained by this model. In other words, linear regression model is a better option for explaining the variation of the population.   
 
-Random Forest: R-squared (% Var explained) : 11.27
 Another metrics is mean squared error (MSE). We can use the following code snippets to find MSE. 
 ```
 cellStats((diff_sums)^2, mean)
 ```
-For the linear regression model, the value of MSE is 18.00924. For the random forest, The value of MSE is 18.10797. Based on this metric, we can tell that the linear regression model is better than the random forest model by a minor margin. It is reasonable to say that both models might not be the ideal methods for this analysis.  
+For the linear regression model, the value of MSE is 18.00924. For the random forest, The value of MSE is 18.10797. The linear regression model has a slightly less MSE than the random forest model. Based on this metric, we can tell that the linear regression model is better than the random forest model by a minor margin. It is reasonable to say that both models might not be the ideal methods for this analysis.  
 
 ## Model Assessment and Spatial Variation Observation
 To assess the two models, we will be looking at the 3D Raster visaulization from the front and back of Albania. We will first look at the front view of the 3D plot for both model. From the first plot of Figure 6, we can tell that both screenshots seem identical. The main similarity is the apparent hole at the location of Tirane. There are smaller holes that represents the regions that have higher population. We can also observe the river basin across Albania from the lines on the map. In general, the front view does not contribute much for the model assessment, but it provides some insight on the landscape. 
@@ -99,3 +100,4 @@ Looking at the back view of the two plots, we can observe some deviation between
 As the final analysis, we will try to scale the data to subregions and examine the spatial variation of urban and suburban areas. 
 
 ## Conclusion 
+In conclusion, considering the results of both 3D visualization and metrics, linear regression has shown a more accurate model than the random forest approach. There are several factors to consider. First, Albania is a small nation, which also reflects on the size of the data point. This could affect the effectiveness of the model prediction. As an extension to this factor, the second barrier that I encountered is the insufficient population variation across the regions. Unlike other countries with large land mass, which has a distinction in population density between urban and suburban areas, Albania is harder to examine the variation. To resolve this barrier, we rescale the data and concentrate on the two districts, x and y. Consequently, we can tell the ... model is a better model for predicting the population. If I have more time, I will try another method such as convolutional neural networks.    
