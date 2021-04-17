@@ -120,9 +120,11 @@ To assess the two models, we will be looking at the 3D Raster visaulization from
 **Figure 6: 3D Raster Visaulization of Linear Regression (a) and Random Forest Models (b) (Front View)** 
 
 (a)
+
 <img src="./3d_front.PNG" />
 
 (b)
+
 <img src="./3d_front_rf.PNG"/>
 
 Looking at the back view of the two plots, we can observe some deviation between the two models. There are a lot of spikes steming from the holes, which can be explained as the under-predictions. As discussed earlier, Tirane has the largest hole, which is reflected as the most dominant spike on the map. Although the screenshots from Figure 7 are taken from different angles, we can see the height of the spikes for the random forest is greater than the linear regression. This suggests the magnitude of the under-prediction is greater for the random forest model. Hence, we can conclude that the linear regression model is a more accurate model for the population prediction of Albania.   
@@ -130,9 +132,11 @@ Looking at the back view of the two plots, we can observe some deviation between
 **Figure 7: 3D Raster Visaulization of Linear Regression (a) and Random Forest Models (b) (Back View)** 
 
 (a)
+
 <img src="./3d_back.PNG"/>
 
 (b)
+
 <img src="./3d_back_rf.PNG"/>
 
 As the final analysis, we will try to scale the data to subregions and examine the spatial variation of urban and suburban areas. 
