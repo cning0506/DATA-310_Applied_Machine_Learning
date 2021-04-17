@@ -87,11 +87,10 @@ Figure 8 shows us the popuulation difference using the random forest model. Comp
 
 Lastly, we can take a look at the difference between the size of the gridcells. We have 2,799,761 as the population sum of 2020 compared to the predicted population of 2,519,400. The predicted population is reduced significantly compared to the linear regression model. This supports the argument from Figure 4, where the size of under-prediction grows with the random forest model. 
 
-Based on these two performances, we can assume that the random forest model is a worse model compared to linear regression model. We will verify this assumption with the two metrics, MSE and R-squared. 
+Based on these two performances, we can assume that the random forest model is a worse model compared to linear regression model. We will verify this assumption with the three metrics, R-squared, MSE, and MAE. 
 
-## Other Methods - PNS Ranger and Random Forest 
 
-## Model Validation with R-squared and MSE 
+## Model Validation with R-squared, MSE, and MAE 
 After running the two methods, we will validate the two models with the metrics of R-squared, MSE, and MAE. All three of these metrics are conveninent assessment metrics since we have calculated the sum of observed value and the sum of predicted values, which fulfills a part of the calculation for both R-squared and MSE.  In fact, for the Random Forest model, we can get the R-squared value with the "print" function of the model (the code snippet attached below). We get the R-squared value of 0.1127, which means that 11.27% of sample variance is explained by this model. 
 ```
 model <- randomForest(sum.pop20 ~ ., data = data)
@@ -104,7 +103,7 @@ Another metrics is mean squared error (MSE). We can use the following code snipp
 ```
 cellStats((diff_sums)^2, mean)
 ```
-For the linear regression model, the value of MSE is 18.00924. For the random forest, The value of MSE is 18.10797. The linear regression model has a slightly less MSE than the random forest model. Based on this metric, we can tell that the linear regression model is better than the random forest model by a minor margin. It is reasonable to say that both models might not be the ideal methods for this analysis.  
+For the linear regression model, the value of MSE is 18.00924. For the random forest, The value of MSE is 18.10797. The linear regression model has a slightly less MSE than the random forest model. Based on this metric, we can tell that the linear regression model is better than the random forest model by a minor margin. 
 
 Last but not least, we can compare the 3D Raster Visualizations of MAE with the following package and functions. 
 ```
@@ -113,11 +112,56 @@ library(mapsRinteractive)
 lr_mae <- mae(alb_pop20, population_sums)
 rasterVis::plot3D(lr_mae)
 ```
+From Figure 6 and Figure 7, we can see the mean absolute error (MAE) of two models are identical. This metric is not helpful of comparing the two models. With the evaluation of the three matrics, it is reasonable to say that both models might not be the ideal methods for this analysis. Hence, we will take a look at some other approach.  
+
+**Figure 6: 3D Raster Visaulization of MAE - Linear Regression** 
+
+<img src="./mae_lr.png" />
+
+**Figure 7: 3D Raster Visaulization of MAE - Random Forest** 
+
+<img src="./mae_rf.png" />
+
+## Alternative Methods - PNS Ranger and Random Forest 
+Since the two methods above are not ideal for the analysis, we will be taking a further step on the Random Forest method and conduct PNS Ranger (a faster implementation of Random Forest) & the original Random Forest.  
+
+Here is the list of the population prediction:
+```
+     .pred
+     <dbl>
+ 1  66462.
+ 2  22090.
+ 3  28490.
+ 4  31917.
+ 5 136844.
+ 6  40005.
+ 7  54645.
+ 8  42848.
+ 9  65604.
+10 162623.
+11 133725.
+12 136213.
+13  32809.
+14 168749.
+```
+To assess the Ranger and Random Forest approach, we use the three metrics, RMSE, RSQ, and MAE. 
+```
+Ranger -
+1 rmse    standard   65051.   
+2 rsq     standard   0.219
+3 mae     standard   45372.  
+
+Random Forest - 
+1 rmse    standard   77638.   
+2 rsq     standard   0.301
+3 mae     standard   57773.
+```
+Based on the statistics above, we can tell that Ranger might be a better method of predicting population of Albania. This might due to the smaller size of data in Albania, which does not require a more complex model for the machine learning. Instead, a more agile method such as Ranger might be more suitable. 
 
 ## Model Assessment and Spatial Variation Observation
-To assess the two models, we will be looking at the 3D Raster visaulization from the front and back of Albania. We will first look at the front view of the 3D plot for both model. From the first plot of Figure 6, we can tell that both screenshots seem identical. The main similarity is the apparent hole at the location of Tirane. There are smaller holes that represents the regions that have higher population. We can also observe the river basin across Albania from the lines on the map. In general, the front view does not contribute much for the model assessment, but it provides some insight on the landscape. 
+To assess the two models, we will be looking at the 3D Raster visaulization from the front and back of Albania. We will first look at the front view of the 3D plot for both model. From Figure 8, we can tell that both screenshots seem identical. The main similarity is the apparent hole at the location of Tirane. There are smaller holes that represents the regions that have higher population. We can also observe the river basin across Albania from the lines on the map. In general, the front view does not contribute much for the model assessment, but it provides some insight on the landscape. 
 
-**Figure 6: 3D Raster Visaulization of Linear Regression (a) and Random Forest Models (b) (Front View)** 
+**Figure 8: 3D Raster Visaulization of Linear Regression (a) and Random Forest Models (b) (Front View)** 
 
 (a)
 
@@ -127,9 +171,9 @@ To assess the two models, we will be looking at the 3D Raster visaulization from
 
 <img src="./3d_front_rf.PNG"/>
 
-Looking at the back view of the two plots, we can observe some deviation between the two models. There are a lot of spikes steming from the holes, which can be explained as the under-predictions. As discussed earlier, Tirane has the largest hole, which is reflected as the most dominant spike on the map. Although the screenshots from Figure 7 are taken from different angles, we can see the height of the spikes for the random forest is greater than the linear regression. This suggests the magnitude of the under-prediction is greater for the random forest model. Hence, we can conclude that the linear regression model is a more accurate model for the population prediction of Albania.   
+Looking at the back view of the two plots, we can observe some deviation between the two models. There are a lot of spikes steming from the holes, which can be explained as the under-predictions. As discussed earlier, Tirane has the largest hole, which is reflected as the most dominant spike on the map. Although the screenshots from Figure 9 are taken from different angles, we can see the height of the spikes for the random forest is greater than the linear regression. This suggests the magnitude of the under-prediction is greater for the random forest model. Hence, we can conclude that the linear regression model is a more accurate model for the population prediction of Albania.   
 
-**Figure 7: 3D Raster Visaulization of Linear Regression (a) and Random Forest Models (b) (Back View)** 
+**Figure 9: 3D Raster Visaulization of Linear Regression (a) and Random Forest Models (b) (Back View)** 
 
 (a)
 
@@ -139,7 +183,6 @@ Looking at the back view of the two plots, we can observe some deviation between
 
 <img src="./3d_back_rf.PNG"/>
 
-As the final analysis, we will try to scale the data to subregions and examine the spatial variation of urban and suburban areas. 
 
 ## Conclusion 
-In conclusion, considering the results of both 3D visualization and metrics, linear regression has shown a more accurate model than the random forest approach. There are several factors to consider. First, Albania is a small nation, which also reflects on the size of the data point. This could affect the effectiveness of the model prediction. As an extension to this factor, the second barrier that I encountered is the insufficient population variation across the regions. Unlike other countries with large land mass, which has a distinction in population density between urban and suburban areas, Albania is harder to examine the variation. To resolve this barrier, we rescale the data and concentrate on the two districts, x and y. Consequently, we can tell the ... model is a better model for predicting the population. If I have more time, I will try another method such as convolutional neural networks.    
+In conclusion, considering the results of both 3D visualization and metrics, linear regression has shown a more accurate model than the random forest approach. Meanwhile, we tried the alternative method of PNS ranger and Random Forest, which adopts a better prediction and easier assessment metrics for comparison. Based on the comparison, we can tell that the Ranger method is a better approach. Throughout the project, there are several factors that should be considered for the insufficient analysis. First, Albania is a small nation, which also reflects on the size of the data point. This could affect the effectiveness of the model prediction. As an extension to this factor, the second barrier that I encountered is the insufficient population variation across the regions. Unlike other countries with large land mass, which has a distinction in population density between urban and suburban areas, Albania is harder to examine the variation. To resolve this barrier, we rescale the data and concentrate on the the most populated region, Tirane. Consequently, we can tell the ... model is a better model for predicting the population. The third barrier that I encountered is the minimal margin of the metrics. It is difficult to analyze the prediction when the model assesments metrics are not helpful. Hence, if I have more time, I will try another method such as convolutional neural networks. In fact, I would conduct the same analysis on a larger country that my laptop is capable of operating. 
