@@ -23,17 +23,27 @@ names(rstr_to_df) <- c("x", "y", "sum.water", "sum.dst011", "sum.dst040", "sum.d
                  "sum.dst150", "sum.dst160", "sum.dst190", "sum.dst200", "sum.topo", 
                  "sum.slope", "sum.ntl", "sum.pop20")
 ```
-Once we have all the data ready, we predict the values and plot the sum of the predicted values and import Albania's 2020 Population raster file. Figure 2 shows the difference between the actual population and the predicted population. The green-colored areas means there are no difference between the preidction and the actual population. Hence, for the majority of the map, there is no over-prediction nor under-prediction. However, towards the left side of the map, we can clearly see a small area of the map is colored in yellow/orange. As shown from the scale, we can tell that the area has a deficiency or under-prediction within the range of -60 to -80. We will discuss further regarding the prediction accuracy and the geographical landscapes in the Model assessment section, with the help of the 3D Raster Visualization. 
+Once we have all the data ready, we predict the values and plot the sum of the predicted values and import Albania's 2020 Population raster file. 
 
-**Figure 2: Population Difference between WorldPop Data and Predicted values w/ linear regression model**
+In Figure 2, we can see the predicted total population sum, which also reflects the regions that have greater population size. As we can tell from the plot, the more populated are concentrated on the west coast, where Albania's capital - Tirane and the Adriatic Sea are located. Whereas the east part of Albania is surrounded by mountain ridges, which has relatively smaller population. There are some regions that are colored in gray, which has the highest populations.    
+
+**Figure 2: Predicted Total Population Sum w/ Linear Regression**
+
+<img src="./pts.png" />
+
+Figure 3 displays the actual total population sum in Albania using linear regression model. 
+
+**Figure 3: Total Population Sum w/ Linear Regression**
+
+<img src="./Pop_sum_20.png" />
+
+
+Figure 4 shows the difference between the actual population and the predicted population. The green-colored areas means there are no difference between the preidction and the actual population. Hence, for the majority of the map, there is no over-prediction nor under-prediction. However, towards the left side of the map, we can clearly see a small area of the map is colored in yellow/orange. As shown from the scale, we can tell that the area has a deficiency or under-prediction within the range of -60 to -80. We will discuss further regarding the prediction accuracy and the geographical landscapes in the Model assessment section, with the help of the 3D Raster Visualization. 
+
+**Figure 4: Population Difference between WorldPop Data and Predicted values w/ linear regression model**
 
 <img src="./Pop_diff_20.png" />
 
-In Figure 3, we can see the predicted total population sum, which also reflects the regions that have greater population size. As we can tell from the plot, the more populated are concentrated on the west coast, where Albania's capital - Tirane and the Adriatic Sea are located. Whereas the east part of Albania is surrounded by mountain ridges, which has relatively smaller population. There are some regions that are colored in gray, which has the highest populations.    
-
-**Figure 3: Predicted Total Population Sum w/ Linear Regression
-
-<img src="./pts.png" />
 
 
 Before we calculate the model assessment metrics, we want to compare the size of the gridcells between the original dataset and the predicted values. As we can tell from the screenshot below, we have 2,799,761 as the population sum of 2020 compared to the predicted population of 2,798,757. It is evident that the population is under-predicted with the linear regression model. 
@@ -46,17 +56,34 @@ The second method we are applying is the random forest model. Similar to linear 
 ```
 model <- randomForest(sum.pop20 ~ ., data = data)
 ```
-Figure 4 shows us the popuulation difference using the random forest model. Comparing Figure 4 to Figure 2, it is fair to say they look identical. However, there is still some slight contrast in the color. Figure 4 shows a splash of red in the center of the same area of Figure 2. The red color represents a range that fail between -80 to -100, which indicate the increasing amount of under-prediction for the random forest model. 
 
-**Figure 4: Population Difference between WorldPop Data and Predicted values w/ Random Forest Model**
+Figure 4 is a plot showing the usefulness of each variable based on inc node purity. We can tell that  there are three variables that are relatively significant, 
 
-<img src="./pop_diff_rf.png" />
+**Figure 5: Inc Node Purity of each variable in Random Forest Model**
+
+<img src="./IncNode.png" />
+
+
 
 Based on Figure 5, the random forest model performs better than the linear regression. The distribution of the population is depicted clearly in every region of the map. There are also more variation shown in the plot, which is doing a better job compared to Figure 3. The location of Tirane is easier to identify with the contrast of the population size and the estimation of the geographical location, which is the lightest pink surrounded by the green and orange regions on the center west coast. 
 
-**Figure 5: Predicted Total Population Sum w/ Random Forest**
+**Figure 6: Predicted Total Population Sum w/ Random Forest**
 
 <img src="./pts_rf.png" />
+
+
+Figure 7 displays the actual total population sum in Albania using random forest model. 
+
+**Figure 7: Total Population Sum w/ Random Forest**
+
+<img src="./Pop_sum_rf.png" />
+
+
+Figure 8 shows us the popuulation difference using the random forest model. Comparing Figure 4 to Figure 2, it is fair to say they look identical. However, there is still some slight contrast in the color. Figure 4 shows a splash of red in the center of the same area of Figure 2. The red color represents a range that fail between -80 to -100, which indicate the increasing amount of under-prediction for the random forest model. 
+
+**Figure 8: Population Difference between WorldPop Data and Predicted values w/ Random Forest Model**
+
+<img src="./pop_diff_rf.png" />
 
 Lastly, we can take a look at the difference between the size of the gridcells. We have 2,799,761 as the population sum of 2020 compared to the predicted population of 2,519,400. The predicted population is reduced significantly compared to the linear regression model. This supports the argument from Figure 4, where the size of under-prediction grows with the random forest model. 
 
@@ -65,7 +92,7 @@ Based on these two performances, we can assume that the random forest model is a
 ## Other Methods - PNS Ranger and Random Forest 
 
 ## Model Validation with R-squared and MSE 
-After running the two methods, we will validate the two models with the metrics of R-squared and MSE. Both of these metrics are conveninent assessment metrics since we have calculated the sum of observed value and the sum of predicted values, which fulfills a part of the calculation for both R-squared and MSE. In fact, for the Random Forest model, we can get the R-squared value with the "print" function of the model (the code snippet attached below). We get the R-squared value of 0.1127, which means that 11.27% of sample variance is explained by this model. 
+After running the two methods, we will validate the two models with the metrics of R-squared, MSE, and MAE. All three of these metrics are conveninent assessment metrics since we have calculated the sum of observed value and the sum of predicted values, which fulfills a part of the calculation for both R-squared and MSE.  In fact, for the Random Forest model, we can get the R-squared value with the "print" function of the model (the code snippet attached below). We get the R-squared value of 0.1127, which means that 11.27% of sample variance is explained by this model. 
 ```
 model <- randomForest(sum.pop20 ~ ., data = data)
 
@@ -79,22 +106,33 @@ cellStats((diff_sums)^2, mean)
 ```
 For the linear regression model, the value of MSE is 18.00924. For the random forest, The value of MSE is 18.10797. The linear regression model has a slightly less MSE than the random forest model. Based on this metric, we can tell that the linear regression model is better than the random forest model by a minor margin. It is reasonable to say that both models might not be the ideal methods for this analysis.  
 
+Last but not least, we can compare the 3D Raster Visualizations of MAE with the following package and functions. 
+```
+install.packages("mapsRinteractive", dependencies = TRUE)
+library(mapsRinteractive)
+lr_mae <- mae(alb_pop20, population_sums)
+rasterVis::plot3D(lr_mae)
+```
+
 ## Model Assessment and Spatial Variation Observation
 To assess the two models, we will be looking at the 3D Raster visaulization from the front and back of Albania. We will first look at the front view of the 3D plot for both model. From the first plot of Figure 6, we can tell that both screenshots seem identical. The main similarity is the apparent hole at the location of Tirane. There are smaller holes that represents the regions that have higher population. We can also observe the river basin across Albania from the lines on the map. In general, the front view does not contribute much for the model assessment, but it provides some insight on the landscape. 
 
-**Figure 6: 3D Raster Visaulization of Linear Regression (1) and Random Forest Models (2) (Front View)** 
+**Figure 6: 3D Raster Visaulization of Linear Regression (a) and Random Forest Models (b) (Front View)** 
 
+(a)
 <img src="./3d_front.PNG" />
 
+(b)
 <img src="./3d_front_rf.PNG"/>
 
 Looking at the back view of the two plots, we can observe some deviation between the two models. There are a lot of spikes steming from the holes, which can be explained as the under-predictions. As discussed earlier, Tirane has the largest hole, which is reflected as the most dominant spike on the map. Although the screenshots from Figure 7 are taken from different angles, we can see the height of the spikes for the random forest is greater than the linear regression. This suggests the magnitude of the under-prediction is greater for the random forest model. Hence, we can conclude that the linear regression model is a more accurate model for the population prediction of Albania.   
 
-**Figure 7: 3D Raster Visaulization of Linear Regression (1) and Random Forest Models (2) (Back View)** 
+**Figure 7: 3D Raster Visaulization of Linear Regression (a) and Random Forest Models (b) (Back View)** 
 
+(a)
 <img src="./3d_back.PNG"/>
 
-
+(b)
 <img src="./3d_back_rf.PNG"/>
 
 As the final analysis, we will try to scale the data to subregions and examine the spatial variation of urban and suburban areas. 
