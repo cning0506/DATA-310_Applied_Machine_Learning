@@ -120,7 +120,7 @@ From Figure 6 and Figure 7, we can see the mean absolute error (MAE) of two mode
 
 **Figure 7: 3D Raster Visaulization of MAE - Random Forest** 
 
-<img src="./mae_rf.png" />
+<img src="./mae_rf.PNG" />
 
 ## Alternative Methods - PNS Ranger and Random Forest 
 Since the two methods above are not ideal for the analysis, we will be taking a further step on the Random Forest method and conduct PNS Ranger (a faster implementation of Random Forest) & the original Random Forest.  
