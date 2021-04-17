@@ -1,5 +1,5 @@
 # DATA 310 Applied Machine Learning - Project 3 - Geospatial & Population Prediction Project on Albania 
-#### Due Date: 04/16/2021
+#### Due Date: 04/18/2021
 
 ## Introduction
 To predict the population distribution of a country, we need to consider both geographical features (such as slope, water regions) and human activities level (e.g. night time light). In Module 3, we want to integrate the geospaital data with the population data, where the data are stored and loaded in the form of rasters.  In this project, we will aggregate layers of rasters of a country. After generating a data frame, we will begin our analysis with the train-test split method, which gives us a list of predicted values. With two approaches, linear regression and random forest models, we can validate the two models with two model assessment metrics, R2 and MSE values. Last but not least, we will take a closer look at the spatial variation of the country and evaluate.
