@@ -18,7 +18,7 @@ Applied Machine Learning with Professor Tyler Frazier
 - [Mini Project 1 - Social Distance Detector](https://cning0506.github.io/DATA-310_Applied_Machine_Learning/mini_project1.html)
 - [Project 1 - Phoenix Housing Deals Analysis](https://cning0506.github.io/DATA-310_Applied_Machine_Learning/Project1.html)
 - [Project 2 - Pakistan DHS Data Analysis Project](https://cning0506.github.io/DATA-310_Applied_Machine_Learning/Project2.html)
-- [Project 3](https://cning0506.github.io/DATA-310_Applied_Machine_Learning/Project3.html)
+- [Project 3 - Albania Geospatial Population Prediction Project](https://cning0506.github.io/DATA-310_Applied_Machine_Learning/Project3.html)
 
 ## Slice of Data Science Writeups
 - [Caleb Robinson](https://cning0506.github.io/DATA-310_Applied_Machine_Learning/SODS_CalebRobinson.html)
