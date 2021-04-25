@@ -1,4 +1,4 @@
-# DATA 310 Final Project - California's Startups Success Forecasting Analysis  
+# DATA 310 Final Project - California Startups Success Forecasting Analysis  
 ### Due Date: 5/18/2021 5:00PM
 
 ## Abstract 
