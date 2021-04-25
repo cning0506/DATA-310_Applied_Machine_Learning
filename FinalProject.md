@@ -12,9 +12,6 @@ Google, Facebook, Apple, Amazon, Netflix, all these Big-Tech companies today hav
 
 ## Model Specification and Methodology
 
-## Method 1
-
-## Method 2 
-
 ## Model Performance Assessment 
 
+## Conclusion
