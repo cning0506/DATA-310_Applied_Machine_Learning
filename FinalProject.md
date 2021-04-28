@@ -2,7 +2,7 @@
 ### Due Date: 5/18/2021 5:00PM
 
 ## Abstract 
-With the more advanced knowledge on Machine learning techniques, there is a boundless amount of applications with the help of Tensorflow Package, a mainstream Machine Learning Package for Python users. With the ability to predict and evaluate the values based on the training and testing sets, we want to explore the landscape of Startups and investigate the key factors that a Startup needs to succeed in the U.S, specifically the state of California, which is one of the major birthplaces of Startups.     
+With the more advanced knowledge on Machine learning techniques, there is a boundless amount of applications with the help of Tensorflow Package, a mainstream Machine Learning Package for Python users. With the ability to predict and evaluate the values based on the training and testing sets, we want to explore the landscape of Startups and investigate the key factors that a Startup needs to succeed in the state of California, which is one of the major birthplaces of US Startups.     
 
 ## Data Description
 With the dataset that I collected from [Kaggle](https://www.kaggle.com/manishkc06/startup-success-prediction), we are looking at the in-depth profile of 923 startups in the United States. To narrow the scope of the investigation, we will only be analyzing 488 startups in California, which is accounted for more than half (53%) of the dataset. We will create a subset that includes startups that are founded in California. There are 49 features/columns in this data, we will only be focusing on several quantiative features and a few categorical features as well. Figure 1 displays a list of the chosen variables and their descriptive statistics of the California Startups.  
