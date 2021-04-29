@@ -19,7 +19,7 @@ Google, Facebook, Apple, Amazon, Netflix, all these Big-Tech companies that we k
 
 ## Model Specification/Architecture
 
-With all the descriptive statistics in mind, we will establish a supervised model that can predict the necessary conditions of these variables. Before we use Keras function as the skeleton structure, we will first create another subset for the Startups that are successfully acquired.
+With all the descriptive statistics in mind, we will establish a supervised model that can predict the necessary conditions of these variables. Before we use Keras function as the skeleton structure, we will first create another subset for the Startups that are successfully acquired, which gives us 332 samples.
 
 ```
 # Change the status of acquired and closed to qualitative variable
