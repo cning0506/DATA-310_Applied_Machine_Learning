@@ -43,5 +43,5 @@ startup_success = startup_all[success]
 ## Conclusion
 
 ## Reference
-[A Round Financing](https://www.investopedia.com/terms/a/a-round-private-equity.asp) \n
+[A Round Financing](https://www.investopedia.com/terms/a/a-round-private-equity.asp) <br/>
 [Angel Investor](https://www.investopedia.com/terms/a/angelinvestor.asp)
