@@ -1,6 +1,9 @@
 # DATA 310 Final Project - California Startups Success Forecasting Analysis  
 ### Due Date: 5/18/2021 5:00PM
 
+## Final Presentation Link [Click Here]()
+
+
 ## Abstract 
 With the more advanced knowledge on Machine learning techniques, there is a boundless amount of applications with the help of Tensorflow Package, a mainstream Machine Learning Package for Python users. With the ability to predict and evaluate the values based on the training and testing sets, we want to explore the landscape of Startups and investigate the key factors that a Startup needs to succeed in the state of California, which is one of the major birthplaces of US Startups.     
 
