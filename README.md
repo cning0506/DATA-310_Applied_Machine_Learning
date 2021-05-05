@@ -19,6 +19,7 @@ Applied Machine Learning with Professor Tyler Frazier
 - [Project 1 - Phoenix Housing Deals Analysis](https://cning0506.github.io/DATA-310_Applied_Machine_Learning/Project1.html)
 - [Project 2 - Pakistan DHS Data Analysis Project](https://cning0506.github.io/DATA-310_Applied_Machine_Learning/Project2.html)
 - [Project 3 - Albania Geospatial Population Prediction Project](https://cning0506.github.io/DATA-310_Applied_Machine_Learning/Project3.html)
+- [Project 4 - Startup Success Forecast Project Proposal](https://cning0506.github.io/DATA-310_Applied_Machine_Learning/Project4.html)
 - [Final Project]()
 
 ## Slice of Data Science Writeups
