@@ -20,7 +20,8 @@ Applied Machine Learning with Professor Tyler Frazier
 - [Project 2 - Pakistan DHS Data Analysis Project](https://cning0506.github.io/DATA-310_Applied_Machine_Learning/Project2.html)
 - [Project 3 - Albania Geospatial Population Prediction Project](https://cning0506.github.io/DATA-310_Applied_Machine_Learning/Project3.html)
 - [Project 4 - Startup Success Forecast Project Proposal](https://cning0506.github.io/DATA-310_Applied_Machine_Learning/Project4.html)
-- [Final Project]()
+- [Final Project - Abstract](https://cning0506.github.io/DATA-310_Applied_Machine_Learning/FinalProject_abstract.html)
+- [Final Project]((https://cning0506.github.io/DATA-310_Applied_Machine_Learning/FinalProject.html)
 
 ## Slice of Data Science Writeups
 - [Caleb Robinson](https://cning0506.github.io/DATA-310_Applied_Machine_Learning/SODS_CalebRobinson.html)
