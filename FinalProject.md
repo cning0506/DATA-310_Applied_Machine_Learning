@@ -38,10 +38,13 @@ success = startup_all['status']==1
 startup_success = startup_all[success]
 ```
 
+We also created a lot of 
+
 ## Model Performance Assessment 
 
 ## Conclusion
 
 ## Reference
 Ganti, A. 2020. Angel investor. Retrieved April 30, 2021, from https://www.investopedia.com/terms/a/angelinvestor.asp <br/>
+KC, M. (2020, September 16). Startup Success Prediction. Kaggle. https://www.kaggle.com/manishkc06/startup-success-prediction. 
 Kenton, W. 2021. What is a round financing? Retrieved April 30, 2021, from https://www.investopedia.com/terms/a/a-round-private-equity.asp
