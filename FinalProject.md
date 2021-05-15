@@ -47,5 +47,6 @@ We also created a lot of
 ## Reference
 Ang, Y. Q., Chia, A., &amp; Saghafian, S. (2020). Using Machine Learning to Demystify Startups Funding, Post-Money Valuation, and Success. Harvard Kennedy School Faculty Research Working Paper Series. https://doi.org/10.2139/ssrn.3681682 
 Ganti, A. 2020. Angel investor. Retrieved April 30, 2021, from https://www.investopedia.com/terms/a/angelinvestor.asp <br/>
+Huang, G. (2016). Predict Startup Success using Network Analysis and Machine Learning Techniques . Stanford CS224W: Social and Information Network Analysis (Autumn 2016). http://snap.stanford.edu/class/cs224w-2016/projects.html. 
 KC, M. (2020, September 16). Startup Success Prediction. Kaggle. https://www.kaggle.com/manishkc06/startup-success-prediction. 
 Kenton, W. 2021. What is a round financing? Retrieved April 30, 2021, from https://www.investopedia.com/terms/a/a-round-private-equity.asp
