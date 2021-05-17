@@ -2,7 +2,7 @@
 ### Due Date: 5/18/2021 5:00PM
 
 ## Final Presentation Slide [Click Here](https://docs.google.com/presentation/d/1sZCz2qkfwxofQ5vASabRpsx0R50TtfQO2pVes0UZJL4/edit?usp=sharing)
-## Final Presentation Link [Click Here](https://github.com/cning0506/DATA-310_Applied_Machine_Learning/blob/c1524cd2d6a704e738d24ddd19872c06cb070e2b/Final_Presentation.html) 
+## Final Presentation Link [Click Here](Final_Presentation.mp4) 
 
 
 ## Abstract 
