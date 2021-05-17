@@ -37,16 +37,38 @@ startup_all = startup
 success = startup_all['status']==1
 startup_success = startup_all[success]
 ```
+After subsetting the data, we adjust the input shape of the Keras model with the three predictors. We compile the three layers as we proceed to the meat of the model, which is fitting the model and predict the dependent variable, the total funding of a successful startup.  
 
-We also created a lot of 
+From the two figures shown in the presentation, we can tell from the results fo the epoch that the loss value is minimize to around 45 Million, which sounds like a huge difference, but we also have to consider the fact that we are using a 10 Million Dollar Scale. We can tell that the total funding of a Startup can varies in a wide range. We have another scatter plot that illustrates the difference between the prediction value and the actual total funding. Based on the fitted line, most of the predictions are not too far from the total fundings. 
 
 ## Model Performance Assessment 
+We also use the logistic regression to test the model performance. For this model assessment, we first focus on the train-test split. After the train-test split process, we can deploy the logistic regression. In our model, we can explore two features - the histogram of the predicted probabilities and the AUC_ROC Curve.   
+
+
+## Literature Review 
+- Publication 1: Using Machine Learning to Demystify Startups Funding, Post-Money Valuation, and Success. (Ang et al, 2020) 
+
+The first paper is published by Harvard Kennedy School as a work of Faculty Research Working Paper Series. It is written by Yu Qian Ang from MIT, Andrew Chia and Soroush Saghafian from Harvard University. The publication aims to predict post-money valuation of startups across various regions and sectors, as well as the probabilities of success. For the analysis, the authors utilize latent Dirichlet allocation, which is a statistical model in natural language processing, with XGBoost, which is a gradient boosting regressor that we have encountered in previous projects. In addition, they also utlize Bayesian optimization. They also utilize TensorFlow to create a neural network model. As a result, they have achieved an accuracy of 95% on the test sets. The goal of this paper is to provide an empirical insight to startups, venture capitalists, and policymakers to set a benchmark for the prediction of success and valuation. 
+
+One thing they discovered is that regions such as San Francisco Bay Area experience high valuations across most sectors. This is an aspect that I would l like to explore if I have more time and data. I want to do an in-depth analysis on the relationship between Startups and different sector. 
+
+In comparison with my model, the accuracy of my model is relatively low. Hence, I would like to enhance my model by either include more observations in the dataset or simply make some adjustment on my model architecture. As an ideal outcome, I would like to create a model that could predict the probabilities of success based on the predictors that I have include in my model. 
+
+- Publication 2: Predict Startup Success using Network Analysis and Machine Learning Techniques (Huang, G., 2016) 
+
+The Second paper is published by Stanford University. The name of the author is Bo Guang Huang. The goal of this study is to use neural network analysis techniques on the investment networks, and develop an algorithmic model that can predict if a startup will be successful. The definition of Success in this study is Acquired, IPO, or valued at $1B or more. This is compatible to my definition of success, which makes it a valuable piece of work that I can learn from. 
+
+The author utilizes three attributes for his model, 1) Status assessment base on Centrality calculations, 2) Investor Status attributes that may contribute to the success of a startup, and 3) 
+predictors that have Power Law distribution, such as amount of funding and location. In this model, the ratio of train-test split is 90:10. The author also uses three categories of supervised learning methods, including Kernel SVM, Adaptive Boosting, and Random Forest. The result of this analysis is that the Random Forest generally performs well with accuracy around 70%. 
+
+To improve my model, I would like to integrate methods such as random forest and Kernel SVM. If I have more time, I want to setup the workflow for random forest method and try to learn the Kernel SVM. Subsequently, I can make a comparison for all three methodologies, along with the logistic regression.  
 
 ## Conclusion
+In conclusion, my preliminary results did not reach my expectation and goal of this project. However, I acknowledge the academic and business interest of this research topic. Hence, if I am going to expand on this project, I would definitely try to find more literature that provides different insights and use them as the foundation of my study. Regarding the improvement on model architecture, since I built my model based on the code from previous projects, I would like to re-consider and perhaps customize the model specification more based on my data. 
 
 ## Reference
 Ang, Y. Q., Chia, A., &amp; Saghafian, S. (2020). Using Machine Learning to Demystify Startups Funding, Post-Money Valuation, and Success. Harvard Kennedy School Faculty Research Working Paper Series. https://doi.org/10.2139/ssrn.3681682 
 Ganti, A. 2020. Angel investor. Retrieved April 30, 2021, from https://www.investopedia.com/terms/a/angelinvestor.asp <br/>
-Huang, G. (2016). Predict Startup Success using Network Analysis and Machine Learning Techniques . Stanford CS224W: Social and Information Network Analysis (Autumn 2016). http://snap.stanford.edu/class/cs224w-2016/projects.html. 
+Huang, G. B. (2016). Predict Startup Success using Network Analysis and Machine Learning Techniques . Stanford CS224W: Social and Information Network Analysis (Autumn 2016). http://snap.stanford.edu/class/cs224w-2016/projects.html. 
 KC, M. (2020, September 16). Startup Success Prediction. Kaggle. https://www.kaggle.com/manishkc06/startup-success-prediction. 
 Kenton, W. 2021. What is a round financing? Retrieved April 30, 2021, from https://www.investopedia.com/terms/a/a-round-private-equity.asp
