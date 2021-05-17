@@ -54,7 +54,7 @@ One thing they discovered is that regions such as San Francisco Bay Area experie
 
 In comparison with my model, the accuracy of my model is relatively low. Hence, I would like to enhance my model by either include more observations in the dataset or simply make some adjustment on my model architecture. As an ideal outcome, I would like to create a model that could predict the probabilities of success based on the predictors that I have include in my model. 
 
-- Publication 2: Predict Startup Success using Network Analysis and Machine Learning Techniques (Huang, G., 2016) 
+- **Publication 2: Predict Startup Success using Network Analysis and Machine Learning Techniques (Huang, G., 2016)** 
 
 The Second paper is published by Stanford University. The name of the author is Bo Guang Huang. The goal of this study is to use neural network analysis techniques on the investment networks, and develop an algorithmic model that can predict if a startup will be successful. The definition of Success in this study is Acquired, IPO, or valued at $1B or more. This is compatible to my definition of success, which makes it a valuable piece of work that I can learn from. 
 
