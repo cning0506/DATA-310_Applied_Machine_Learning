@@ -46,7 +46,7 @@ We also use the logistic regression to test the model performance. For this mode
 
 
 ## Literature Review 
-- Publication 1: Using Machine Learning to Demystify Startups Funding, Post-Money Valuation, and Success. (Ang et al, 2020) 
+- **Publication 1: Using Machine Learning to Demystify Startups Funding, Post-Money Valuation, and Success. (Ang et al, 2020)** 
 
 The first paper is published by Harvard Kennedy School as a work of Faculty Research Working Paper Series. It is written by Yu Qian Ang from MIT, Andrew Chia and Soroush Saghafian from Harvard University. The publication aims to predict post-money valuation of startups across various regions and sectors, as well as the probabilities of success. For the analysis, the authors utilize latent Dirichlet allocation, which is a statistical model in natural language processing, with XGBoost, which is a gradient boosting regressor that we have encountered in previous projects. In addition, they also utlize Bayesian optimization. They also utilize TensorFlow to create a neural network model. As a result, they have achieved an accuracy of 95% on the test sets. The goal of this paper is to provide an empirical insight to startups, venture capitalists, and policymakers to set a benchmark for the prediction of success and valuation. 
 
